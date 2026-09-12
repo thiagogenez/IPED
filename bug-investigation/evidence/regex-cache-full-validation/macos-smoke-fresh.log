@@ -1,0 +1,53 @@
+2026-09-12 23:07:18	[ERROR]	[parsers.python.PythonParser]			JEP not found, all python modules were disabled. See https://github.com/sepinf-inc/IPED/wiki/User-Manual#python-modules
+2026-09-12 23:07:19	[ERROR]	[parsers.util.EsedbManager]			Libesedb JNA not loaded properly. EdgeWebCacheParser will be disabled.
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Opening Index...
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting SkipCommitedTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting IgnoreHardLinkTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting TempFileTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting HashTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting SignatureTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting SetTypeTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting SetCategoryTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting null
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting HashDBLookupTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting DuplicateTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting AudioTranscriptTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting VideoThumbTask
+2026-09-12 23:07:22	[MSG]	[processing.ui.ProgressConsole]			Starting ParsingTask
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing PrefetchParser. Disable it in conf/ExternalParsers.xml or install 'sccainfo'
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing RecycleBinParser. Disable it in conf/ExternalParsers.xml or install 'rifiuti-vista'
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing RecycleInfo2Parser. Disable it in conf/ExternalParsers.xml or install 'rifiuti2'
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing EvtxLogParser. Disable it in conf/ExternalParsers.xml or install 'evtxexport'
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing EvtLogParser. Disable it in conf/ExternalParsers.xml or install 'evtexport'
+2026-09-12 23:07:22	[ERROR]	[parsers.external.ExternalParsersConfigReader]			Error testing SuperFetchParser. Disable it in conf/ExternalParsers.xml or install 'agdbinfo'
+2026-09-12 23:07:23	[ERROR]	[app.processing.Main]			Processing Error: 
+java.lang.UnsatisfiedLinkError: no zstd-jni in java.library.path: [/Users/thiagogenez/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java, .]
+Unsupported OS/arch, cannot find /darwin/aarch64/libzstd-jni.dylib or load zstd-jni from system libraries. Please try building from source the jar or providing libzstd-jni in you system.
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:2678) ~[?:?]
+	at java.lang.Runtime.loadLibrary0(Runtime.java:830) ~[?:?]
+	at java.lang.System.loadLibrary(System.java:1890) ~[?:?]
+	at com.github.luben.zstd.util.Native.load(Native.java:69) ~[zstd-jni-1.3.3-3.jar:?]
+	at com.github.luben.zstd.ZstdInputStream.<clinit>(ZstdInputStream.java:22) ~[zstd-jni-1.3.3-3.jar:?]
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:315) ~[?:?]
+	at org.apache.tika.parser.pkg.CompressorParser.<clinit>(CompressorParser.java:100) ~[tika-parsers-standard-package-2.4.0-p1.jar:2.4.0]
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:398) ~[?:?]
+	at org.apache.tika.config.ServiceLoader.getServiceClass(ServiceLoader.java:214) ~[tika-core-2.4.0-p1.jar:2.4.0]
+	at org.apache.tika.config.TikaConfig$XmlLoader.loadOne(TikaConfig.java:675) ~[tika-core-2.4.0-p1.jar:2.4.0]
+	at org.apache.tika.config.TikaConfig$XmlLoader.loadOverall(TikaConfig.java:626) ~[tika-core-2.4.0-p1.jar:2.4.0]
+	at org.apache.tika.config.TikaConfig.<init>(TikaConfig.java:249) ~[tika-core-2.4.0-p1.jar:2.4.0]
+	at org.apache.tika.config.TikaConfig.getDefaultConfig(TikaConfig.java:335) ~[tika-core-2.4.0-p1.jar:2.4.0]
+	at iped.parsers.standard.StandardParser.getTikaConfig(StandardParser.java:103) ~[iped-parsers-impl-4.4.0-SNAPSHOT.jar:?]
+	at iped.parsers.standard.StandardParser.<init>(StandardParser.java:111) ~[iped-parsers-impl-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.task.ParsingTask.init(ParsingTask.java:781) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Worker.initTasks(Worker.java:130) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Worker.init(Worker.java:113) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Manager.initWorkers(Manager.java:559) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Manager.process(Manager.java:282) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.app.processing.Main.startManager(Main.java:182) [iped.jar:?]
+	at iped.app.processing.Main.execute(Main.java:257) [iped.jar:?]
+	at iped.app.processing.Main.main(Main.java:325) [iped.jar:?]
+
+ERROR!!!
+Check the log at /private/tmp/iped-regex-cache-pr/target/release/iped-4.4.0-SNAPSHOT/log/IPED-2026-09-12-23-07-17.log

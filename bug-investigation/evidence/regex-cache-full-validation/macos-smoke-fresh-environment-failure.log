@@ -1,0 +1,45 @@
+2026-09-12 22:56:00	[ERROR]	[parsers.python.PythonParser]			JEP not found, all python modules were disabled. See https://github.com/sepinf-inc/IPED/wiki/User-Manual#python-modules
+2026-09-12 22:56:02	[ERROR]	[parsers.util.EsedbManager]			Libesedb JNA not loaded properly. EdgeWebCacheParser will be disabled.
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Opening Index...
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting SkipCommitedTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting IgnoreHardLinkTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting TempFileTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting HashTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting SignatureTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting SetTypeTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting SetCategoryTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting null
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting HashDBLookupTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting DuplicateTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting AudioTranscriptTask
+2026-09-12 22:56:10	[MSG]	[processing.ui.ProgressConsole]			Starting VideoThumbTask
+2026-09-12 22:56:10	[ERROR]	[app.processing.Main]			Processing Error: 
+java.lang.UnsatisfiedLinkError: no jniavutil in java.library.path: [/Users/thiagogenez/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java, .]
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:2678) ~[?:?]
+	at java.lang.Runtime.loadLibrary0(Runtime.java:830) ~[?:?]
+	at java.lang.System.loadLibrary(System.java:1890) ~[?:?]
+	at org.bytedeco.javacpp.Loader.loadLibrary(Loader.java:1832) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1423) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1234) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1210) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.ffmpeg.global.avutil.<clinit>(avutil.java:14) ~[ffmpeg-8.0.1-1.5.13.jar:8.0.1-1.5.13]
+	at java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.lang.Class.forName(Class.java:398) ~[?:?]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1289) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1234) ~[javacpp-1.5.13.jar:1.5.13]
+	at org.bytedeco.javacpp.Loader.load(Loader.java:1226) ~[javacpp-1.5.13.jar:1.5.13]
+	at iped.engine.task.video.VideoThumbsMaker.<clinit>(VideoThumbsMaker.java:43) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.task.video.VideoThumbTask.init(VideoThumbTask.java:215) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Worker.initTasks(Worker.java:130) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Worker.init(Worker.java:113) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Manager.initWorkers(Manager.java:559) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.engine.core.Manager.process(Manager.java:282) ~[iped-engine-4.4.0-SNAPSHOT.jar:?]
+	at iped.app.processing.Main.startManager(Main.java:182) [iped.jar:?]
+	at iped.app.processing.Main.execute(Main.java:257) [iped.jar:?]
+	at iped.app.processing.Main.main(Main.java:325) [iped.jar:?]
+Caused by: java.lang.UnsatisfiedLinkError: Could not find jniavutil in class, module, and library paths.
+	at org.bytedeco.javacpp.Loader.loadLibrary(Loader.java:1799) ~[javacpp-1.5.13.jar:1.5.13]
+	... 18 more
+
+ERROR!!!
+Check the log at /private/tmp/iped-regex-cache-pr/target/release/iped-4.4.0-SNAPSHOT/log/IPED-2026-09-12-22-55-59.log

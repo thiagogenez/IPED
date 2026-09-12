@@ -1,0 +1,12 @@
+[
+  {
+    "test": "iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Parsing",
+    "type": "java.lang.RuntimeException",
+    "message": "net.sf.sevenzipjbinding.SevenZipNativeInitializationException: Error loading SevenZipJBinding native library into JVM: Can't find suited platform for os.arch=aarch64, os.name=Mac... Available list of platforms: Linux-amd64, Linux-i386, Mac-x86_64, Windows-amd64, Windows-x86 [You may also try different SevenZipJBinding initialization methods 'net.sf.sevenzipjbinding.SevenZip.init*()' in order to solve this problem] "
+  },
+  {
+    "test": "iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Embedded",
+    "type": "java.lang.RuntimeException",
+    "message": "SevenZipJBinding wasn't initialized successfully last time."
+  }
+]

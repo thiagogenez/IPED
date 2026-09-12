@@ -45,3 +45,7 @@ Correção preparada na branch `fix/regex-cache-failure`, commit `cea9fc1`, como
 Antes: dez testes, seis erros. Depois: dez testes sem falhas ou erros; incluindo validadores próximos, 71 testes passaram em Maven/JDK 11. Cache corrompido é reconstruído; gravação temporária e substituição atômica preservam o cache anterior; falhas do cache não impedem matching. SOE controlado no limite de serialização; outros erros fatais continuam propagando.
 
 Descrição: [regex-cache.md](prs/regex-cache.md). Logs: [antes](evidence/regex-cache-before.log), [depois](evidence/regex-cache-after.log), [validadores](evidence/regex-cache-validation.log). GUI, Windows e configuração grande do autor não executados.
+
+### Validação ampliada da #2940
+
+Concluída: mesmos dois erros SevenZip no master/macOS; verify aprovado excluindo só essa classe (279 aprovados, 15 ignorados); dez testes Windows aprovados; quatro processamentos sintéticos Windows com resultado idêntico no índice. [Relatório e evidências](evidence/regex-cache-full-validation/README.md). [Execução Windows](https://github.com/thiagogenez/IPED/actions/runs/34719146467). Código do PR preservado, CI em branch separada.

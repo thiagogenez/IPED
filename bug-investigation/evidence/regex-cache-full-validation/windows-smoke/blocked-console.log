@@ -1,0 +1,61 @@
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Opening Index...
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting SkipCommitedTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting IgnoreHardLinkTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting TempFileTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting HashTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting SignatureTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting SetTypeTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting SetCategoryTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting null
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting HashDBLookupTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting DuplicateTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting AudioTranscriptTask
+2026-09-12 21:13:57	[MSG]	[processing.ui.ProgressConsole]			Starting VideoThumbTask
+2026-09-12 21:14:07	[MSG]	[processing.ui.ProgressConsole]			Starting ParsingTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting QRCodeTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting RegexTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting LanguageDetectTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting NamedEntityTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting ExportFileTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting EmbeddedDiskProcessTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting MakePreviewTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting JumpListTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting DocThumbTask
+2026-09-12 21:14:09	[MSG]	[processing.ui.ProgressConsole]			Starting ImageThumbTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting DIETask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting ImageSimilarityTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting PhotoDNATask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting PhotoDNALookup
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting RemoteImageClassifierTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting NSFWNudityDetectTask.py
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting FaceRecognitionTask.py
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting AgeEstimationTask.py
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting SearchHardwareWallets.py
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting CSAMDetectorTask.py
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting LedCarveTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting CarverTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting KnownMetCarveTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting FragmentLargeBinaryTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting EntropyTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting MinIOTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting ElasticSearchIndexTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting IndexTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting GraphTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting ExportCSVTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Starting HTMLReportTask
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Adding 'C:\Users\RUNNER~1\AppData\Local\Temp\iped-regex-smoke-al1ew395\evidence'
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Found 3 files Finish in 0h 0m 0s
+2026-09-12 21:14:10	[MSG]	[processing.ui.ProgressConsole]			Found 3 files Finish in 0h 0m 0s
+2026-09-12 21:14:11	[MSG]	[processing.ui.ProgressConsole]			Found 3 files Finish in 0h 0m 0s
+2026-09-12 21:14:11	[ERROR]	[parsers.whatsapp.WhatsAppParser]			HashTask is disabled. WhatsAppParser needs it to link attachments to chats!
+2026-09-12 21:14:12	[MSG]	[processing.ui.ProgressConsole]			Processing 3/3 (0%) 0GB/h Finish in 0h 0m 0s
+2026-09-12 21:14:13	[MSG]	[processing.ui.ProgressConsole]			Processing 3/3 (0%) 0GB/h Finish in 0h 0m 0s
+2026-09-12 21:14:14	[MSG]	[processing.ui.ProgressConsole]			Processing 3/3 (0%) 0GB/h Finish in 0h 0m 0s
+2026-09-12 21:14:15	[MSG]	[processing.ui.ProgressConsole]			Processing 3/3 (0%) 0GB/h Finish in 0h 0m 0s
+2026-09-12 21:14:16	[MSG]	[processing.ui.ProgressConsole]			Processing 3/3 (0%) 0GB/h Finish in 0h 0m 0s
+2026-09-12 21:14:17	[MSG]	[processing.ui.ProgressConsole]			Closing Index...
+2026-09-12 21:14:17	[MSG]	[processing.ui.ProgressConsole]			Filtering Keywords...
+2026-09-12 21:14:17	[MSG]	[processing.ui.ProgressConsole]			Finished
+
+IPED finished.
+Check the log at D:\a\IPED\IPED\smoke-results\blocked-processing.log

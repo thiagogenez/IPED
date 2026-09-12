@@ -1,0 +1,580 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] iped-parent                                                        [pom]
+[INFO] iped-api                                                           [jar]
+[INFO] iped-utils                                                         [jar]
+[INFO] iped-parsers                                                       [pom]
+[INFO] java-dbf                                                           [jar]
+[INFO] iped-parsers-impl                                                  [jar]
+[INFO] iped-viewers                                                       [pom]
+[INFO] iped-viewers-api                                                   [jar]
+[INFO] iped-viewers-impl                                                  [jar]
+[INFO] iped-carvers                                                       [pom]
+[INFO] iped-ahocorasick                                                   [jar]
+[INFO] iped-carvers-api                                                   [jar]
+[INFO] iped-carvers-impl                                                  [jar]
+[INFO] iped-engine                                                        [jar]
+[INFO] iped-geo                                                           [jar]
+[INFO] iped-app                                                           [jar]
+[INFO] 
+[INFO] --------------------------< iped:iped-parent >--------------------------
+[INFO] Building iped-parent 4.4.0-SNAPSHOT                               [1/16]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] ---------------------------< iped:iped-api >----------------------------
+[INFO] Building iped-api 4.4.0-SNAPSHOT                                  [2/16]
+[INFO]   from iped-api/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Artifact org.apache:apache:pom:32 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact org.apache:apache:pom:32 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact org.junit:junit-bom:pom:5.10.2 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact org.junit:junit-bom:pom:5.10.2 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ iped-api ---
+[INFO] skip non existing resourceDirectory /private/tmp/iped-regex-cache-pr/iped-api/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ iped-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ iped-api ---
+[INFO] skip non existing resourceDirectory /private/tmp/iped-regex-cache-pr/iped-api/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ iped-api ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ iped-api ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ iped-api ---
+[INFO] Artifact commons-io:commons-io:pom:2.16.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact commons-io:commons-io:pom:2.16.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact org.apache.commons:commons-parent:pom:69 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact org.apache.commons:commons-parent:pom:69 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact commons-io:commons-io:jar:2.16.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Artifact commons-io:commons-io:jar:2.16.1 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [central (https://repo.maven.apache.org/maven2, default, releases), apache.snapshots (https://repository.apache.org/snapshots, default, snapshots)]
+[INFO] Building jar: /private/tmp/iped-regex-cache-pr/iped-api/target/iped-api-4.4.0-SNAPSHOT.jar
+[INFO] 
+[INFO] >>> source:2.4:jar (attach-sources) > generate-sources @ iped-api >>>
+[INFO] 
+[INFO] <<< source:2.4:jar (attach-sources) < generate-sources @ iped-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:2.4:jar (attach-sources) @ iped-api ---
+[INFO] Building jar: /private/tmp/iped-regex-cache-pr/iped-api/target/iped-api-4.4.0-SNAPSHOT-sources.jar
+[INFO] 
+[INFO] --------------------------< iped:iped-utils >---------------------------
+[INFO] Building iped-utils 4.4.0-SNAPSHOT                                [3/16]
+[INFO]   from iped-utils/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ iped-utils ---
+[INFO] Copying 3432 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ iped-utils ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 33 source files to /private/tmp/iped-regex-cache-pr/iped-utils/target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ iped-utils ---
+[INFO] skip non existing resourceDirectory /private/tmp/iped-regex-cache-pr/iped-utils/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ iped-utils ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ iped-utils ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ iped-utils ---
+[INFO] Building jar: /private/tmp/iped-regex-cache-pr/iped-utils/target/iped-utils-4.4.0-SNAPSHOT.jar
+[INFO] 
+[INFO] -------------------------< iped:iped-parsers >--------------------------
+[INFO] Building iped-parsers 4.4.0-SNAPSHOT                              [4/16]
+[INFO]   from iped-parsers/pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> source:2.4:jar (attach-sources) > generate-sources @ iped-parsers >>>
+[INFO] 
+[INFO] <<< source:2.4:jar (attach-sources) < generate-sources @ iped-parsers <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:2.4:jar (attach-sources) @ iped-parsers ---
+[INFO] 
+[INFO] ---------------------------< iped:java-dbf >----------------------------
+[INFO] Building java-dbf 1.0-patched                                     [5/16]
+[INFO]   from iped-parsers/java-dbf/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ java-dbf ---
+[INFO] skip non existing resourceDirectory /private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ java-dbf ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ java-dbf ---
+[INFO] skip non existing resourceDirectory /private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ java-dbf ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ java-dbf ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ java-dbf ---
+[INFO] Building jar: /private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/target/java-dbf-1.0-patched.jar
+[INFO] 
+[INFO] >>> source:2.4:jar (attach-sources) > generate-sources @ java-dbf >>>
+[INFO] 
+[INFO] <<< source:2.4:jar (attach-sources) < generate-sources @ java-dbf <<<
+[INFO] 
+[INFO] 
+[INFO] --- source:2.4:jar (attach-sources) @ java-dbf ---
+[INFO] Building jar: /private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/target/java-dbf-1.0-patched-sources.jar
+[INFO] 
+[INFO] -----------------------< iped:iped-parsers-impl >-----------------------
+[INFO] Building iped-parsers-impl 4.4.0-SNAPSHOT                         [6/16]
+[INFO]   from iped-parsers/iped-parsers-impl/pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 1 problem was encountered while building the effective model for org.javassist:javassist:jar:3.19.0-GA during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ iped-parsers-impl ---
+[INFO] argLine set to -javaagent:/private/tmp/iped-contribution-tools/m2/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/jacoco.exec
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ iped-parsers-impl ---
+[INFO] Copying 65 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ iped-parsers-impl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 432 source files to /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/classes
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/main/java/iped/parsers/registry/keys/HtmlKeyParser.java: Some input files use or override a deprecated API.
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/main/java/iped/parsers/registry/keys/HtmlKeyParser.java: Recompile with -Xlint:deprecation for details.
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/main/java/iped/parsers/registry/RegRipperParser.java: Some input files use unchecked or unsafe operations.
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/main/java/iped/parsers/registry/RegRipperParser.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ iped-parsers-impl ---
+[INFO] Copying 122 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ iped-parsers-impl ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 72 source files to /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/test-classes
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/test/java/iped/parsers/util/BaseItemSearchContext.java: /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/test/java/iped/parsers/util/BaseItemSearchContext.java uses or overrides a deprecated API.
+[INFO] /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/src/test/java/iped/parsers/util/BaseItemSearchContext.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.2.5:test (default-test) @ iped-parsers-impl ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running iped.parsers.misc.GenericOLEParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.040 s -- in iped.parsers.misc.GenericOLEParserTest
+[INFO] Running iped.parsers.misc.PDFTextParserTest
+Sep 12, 2026 10:47:08 PM org.icepdf.core.pobjects.Catalog <clinit>
+INFO: ICEpdf Core 7.0.0
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.72 s -- in iped.parsers.misc.PDFTextParserTest
+[INFO] Running iped.parsers.misc.XMLParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.149 s -- in iped.parsers.misc.XMLParserTest
+[INFO] Running iped.parsers.misc.MultipleParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 s -- in iped.parsers.misc.MultipleParserTest
+[INFO] Running iped.parsers.database.EDBParserTest
+22:47:15.779 [main] ERROR iped.parsers.database.EDBParser - Error testing esedbexport (libesedb): EDB databases will NOT be parsed!
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.027 s -- in iped.parsers.database.EDBParserTest
+[INFO] Running iped.parsers.database.XBaseParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in iped.parsers.database.XBaseParserTest
+[INFO] Running iped.parsers.database.MSAccessParserTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.147 s -- in iped.parsers.database.MSAccessParserTest
+[INFO] Running iped.parsers.compress.RARParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.827 s -- in iped.parsers.compress.RARParserTest
+[INFO] Running iped.parsers.compress.PackageParserTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.545 s -- in iped.parsers.compress.PackageParserTest
+[INFO] Running iped.parsers.compress.SevenZipParserTest
+[ERROR] Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.249 s <<< FAILURE! -- in iped.parsers.compress.SevenZipParserTest
+[ERROR] iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Parsing -- Time elapsed: 0.125 s <<< ERROR!
+java.lang.RuntimeException: net.sf.sevenzipjbinding.SevenZipNativeInitializationException: Error loading SevenZipJBinding native library into JVM: Can't find suited platform for os.arch=aarch64, os.name=Mac... Available list of platforms: Linux-amd64, Linux-i386, Mac-x86_64, Windows-amd64, Windows-x86 [You may also try different SevenZipJBinding initialization methods 'net.sf.sevenzipjbinding.SevenZip.init*()' in order to solve this problem] 
+	at iped.parsers.compress.SevenZipParser.init7zNativeLibs(SevenZipParser.java:109)
+	at iped.parsers.compress.SevenZipParser.parse(SevenZipParser.java:125)
+	at iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Parsing(SevenZipParserTest.java:33)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: net.sf.sevenzipjbinding.SevenZipNativeInitializationException: Error loading SevenZipJBinding native library into JVM: Can't find suited platform for os.arch=aarch64, os.name=Mac... Available list of platforms: Linux-amd64, Linux-i386, Mac-x86_64, Windows-amd64, Windows-x86 [You may also try different SevenZipJBinding initialization methods 'net.sf.sevenzipjbinding.SevenZip.init*()' in order to solve this problem] 
+	at net.sf.sevenzipjbinding.SevenZip.throwInitException(SevenZip.java:825)
+	at net.sf.sevenzipjbinding.SevenZip.throwInitException(SevenZip.java:820)
+	at net.sf.sevenzipjbinding.SevenZip.getPlatformBestMatch(SevenZip.java:895)
+	at net.sf.sevenzipjbinding.SevenZip.determineAndSetUsedPlatform(SevenZip.java:466)
+	at net.sf.sevenzipjbinding.SevenZip.initSevenZipFromPlatformJARIntern(SevenZip.java:451)
+	at net.sf.sevenzipjbinding.SevenZip.initSevenZipFromPlatformJAR(SevenZip.java:366)
+	at iped.parsers.compress.SevenZipParser.init7zNativeLibs(SevenZipParser.java:105)
+	... 23 more
+
+[ERROR] iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Embedded -- Time elapsed: 0.124 s <<< ERROR!
+java.lang.RuntimeException: SevenZipJBinding wasn't initialized successfully last time.
+	at net.sf.sevenzipjbinding.SevenZip.ensureLibraryIsInitialized(SevenZip.java:814)
+	at net.sf.sevenzipjbinding.SevenZip.openInArchive(SevenZip.java:766)
+	at iped.parsers.compress.SevenZipParser.parse(SevenZipParser.java:144)
+	at iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Embedded(SevenZipParserTest.java:100)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at junit.framework.TestCase.runTest(TestCase.java:177)
+	at junit.framework.TestCase.runBare(TestCase.java:142)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:130)
+	at junit.framework.TestSuite.runTest(TestSuite.java:241)
+	at junit.framework.TestSuite.run(TestSuite.java:236)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:90)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: net.sf.sevenzipjbinding.SevenZipNativeInitializationException: Error loading SevenZipJBinding native library into JVM: Can't find suited platform for os.arch=aarch64, os.name=Mac... Available list of platforms: Linux-amd64, Linux-i386, Mac-x86_64, Windows-amd64, Windows-x86 [You may also try different SevenZipJBinding initialization methods 'net.sf.sevenzipjbinding.SevenZip.init*()' in order to solve this problem] 
+	at net.sf.sevenzipjbinding.SevenZip.throwInitException(SevenZip.java:825)
+	at net.sf.sevenzipjbinding.SevenZip.throwInitException(SevenZip.java:820)
+	at net.sf.sevenzipjbinding.SevenZip.getPlatformBestMatch(SevenZip.java:895)
+	at net.sf.sevenzipjbinding.SevenZip.determineAndSetUsedPlatform(SevenZip.java:466)
+	at net.sf.sevenzipjbinding.SevenZip.initSevenZipFromPlatformJARIntern(SevenZip.java:451)
+	at net.sf.sevenzipjbinding.SevenZip.initSevenZipFromPlatformJAR(SevenZip.java:366)
+	at iped.parsers.compress.SevenZipParser.init7zNativeLibs(SevenZipParser.java:105)
+	at iped.parsers.compress.SevenZipParser.parse(SevenZipParser.java:125)
+	at iped.parsers.compress.SevenZipParserTest.testSevenZipRAR5Parsing(SevenZipParserTest.java:33)
+	... 21 more
+
+[INFO] Running iped.parsers.video.FLVParserWrapperTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s -- in iped.parsers.video.FLVParserWrapperTest
+[INFO] Running iped.parsers.video.EmptyVideoParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s -- in iped.parsers.video.EmptyVideoParserTest
+[INFO] Running iped.parsers.bittorrent.BitTorrentResumeDatParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in iped.parsers.bittorrent.BitTorrentResumeDatParserTest
+[INFO] Running iped.parsers.bittorrent.TorrentFileParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in iped.parsers.bittorrent.TorrentFileParserTest
+[INFO] Running iped.parsers.ares.AresParserTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in iped.parsers.ares.AresParserTest
+[INFO] Running iped.parsers.python.PythonParserTest
+22:47:19.875 [main] ERROR iped.parsers.python.PythonParser - JEP not found, all python modules were disabled. See https://github.com/sepinf-inc/IPED/wiki/User-Manual#python-modules
+java.lang.UnsatisfiedLinkError: no jep in java.library.path: [/Users/thiagogenez/Library/Java/Extensions, /Library/Java/Extensions, /Network/Library/Java/Extensions, /System/Library/Java/Extensions, /usr/lib/java, .]
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2678)
+	at java.base/java.lang.Runtime.loadLibrary0(Runtime.java:830)
+	at java.base/java.lang.System.loadLibrary(System.java:1890)
+	at jep.MainInterpreter.initialize(MainInterpreter.java:129)
+	at jep.MainInterpreter.getMainInterpreter(MainInterpreter.java:101)
+	at jep.Jep.<init>(Jep.java:133)
+	at jep.SharedInterpreter.<init>(SharedInterpreter.java:56)
+	at iped.parsers.python.PythonParser.getNewJep(PythonParser.java:176)
+	at iped.parsers.python.PythonParser.getJep(PythonParser.java:165)
+	at iped.parsers.python.PythonParser.<init>(PythonParser.java:107)
+	at iped.parsers.python.PythonParserTest.testPythonParserExample(PythonParserTest.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.098 s -- in iped.parsers.python.PythonParserTest
+[INFO] Running iped.parsers.security.CryptoAPIBlobParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in iped.parsers.security.CryptoAPIBlobParserTest
+[INFO] Running iped.parsers.security.CertificateParserTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s -- in iped.parsers.security.CertificateParserTest
+[INFO] Running iped.parsers.security.KeyStoreParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 s -- in iped.parsers.security.KeyStoreParserTest
+[INFO] Running iped.parsers.eventtranscript.EventTranscriptParserTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.570 s -- in iped.parsers.eventtranscript.EventTranscriptParserTest
+[INFO] Running iped.parsers.mail.OutlookPSTParserTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.054 s -- in iped.parsers.mail.OutlookPSTParserTest
+[INFO] Running iped.parsers.mail.OutlookDBXParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 s -- in iped.parsers.mail.OutlookDBXParserTest
+[INFO] Running iped.parsers.mail.RFC822ParserTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.274 s -- in iped.parsers.mail.RFC822ParserTest
+[INFO] Running iped.parsers.mail.MBoxParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.309 s -- in iped.parsers.mail.MBoxParserTest
+[INFO] Running iped.parsers.mail.MSGParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 s -- in iped.parsers.mail.MSGParserTest
+[INFO] Running iped.parsers.mail.LibpffPSTParserTest
+22:47:22.988 [main] ERROR iped.parsers.mail.LibpffPSTParser - Error testing pffexport (libpff): Outlook OST 2013 files will NOT be parsed!
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 s -- in iped.parsers.mail.LibpffPSTParserTest
+[INFO] Running iped.parsers.mail.IncrediMailParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.542 s -- in iped.parsers.mail.IncrediMailParserTest
+[INFO] Running iped.parsers.ocr.OCRParserTest
+22:47:23.761 [main] ERROR iped.parsers.ocr.OCRParser - Skipping tesseract tests...
+java.io.IOException: Cannot run program "tesseract": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at java.base/java.lang.Runtime.exec(Runtime.java:592)
+	at java.base/java.lang.Runtime.exec(Runtime.java:451)
+	at iped.parsers.ocr.OCRParser.checkVersionInfo(OCRParser.java:694)
+	at iped.parsers.ocr.OCRParserTest.setUpTool(OCRParserTest.java:54)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:340)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:271)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 25 more
+
+
+
+
+
+[WARNING] Tests run: 5, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 0.035 s -- in iped.parsers.ocr.OCRParserTest
+[INFO] Running iped.parsers.shareaza.ShareazaLibraryDatParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in iped.parsers.shareaza.ShareazaLibraryDatParserTest
+[INFO] Running iped.parsers.shareaza.ShareazaDownloadParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in iped.parsers.shareaza.ShareazaDownloadParserTest
+[INFO] Running iped.parsers.shareaza.ShareazaSearchesDatParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in iped.parsers.shareaza.ShareazaSearchesDatParserTest
+[INFO] Running iped.parsers.winx.WinXTimelineParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 s -- in iped.parsers.winx.WinXTimelineParserTest
+[INFO] Running iped.parsers.gdrive.GDriveSnapshotParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in iped.parsers.gdrive.GDriveSnapshotParserTest
+[INFO] Running iped.parsers.gdrive.GDriveCloudGraphParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in iped.parsers.gdrive.GDriveCloudGraphParserTest
+[INFO] Running iped.parsers.gdrive.GDriveMainParserTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.113 s -- in iped.parsers.gdrive.GDriveMainParserTest
+[INFO] Running iped.parsers.sqlite.detector.SQLiteContainerDetectorTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in iped.parsers.sqlite.detector.SQLiteContainerDetectorTest
+[INFO] Running iped.parsers.sqlite.SQLite3ParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.330 s -- in iped.parsers.sqlite.SQLite3ParserTest
+[INFO] Running iped.parsers.image.TiffPageParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in iped.parsers.image.TiffPageParserTest
+[INFO] Running iped.parsers.image.ImageParserTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in iped.parsers.image.ImageParserTest
+[INFO] Running iped.parsers.standard.RawStringParserTest
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s -- in iped.parsers.standard.RawStringParserTest
+[INFO] Running iped.parsers.standard.StandardParserTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.620 s -- in iped.parsers.standard.StandardParserTest
+[INFO] Running iped.parsers.vlc.VLCIniParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in iped.parsers.vlc.VLCIniParserTest
+[INFO] Running iped.parsers.evtx.EvtxParserTest
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.190 s -- in iped.parsers.evtx.EvtxParserTest
+[INFO] Running iped.parsers.browsers.firefox.FirefoxSqliteParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.093 s -- in iped.parsers.browsers.firefox.FirefoxSqliteParserTest
+[INFO] Running iped.parsers.browsers.firefox.FirefoxSavedSessionParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.157 s -- in iped.parsers.browsers.firefox.FirefoxSavedSessionParserTest
+[INFO] Running iped.parsers.browsers.edge.EdgeWebCacheParserTest
+22:47:26.233 [main] ERROR iped.parsers.browsers.edge.EdgeWebCacheParser - Libesedb JNA not loaded properly. EdgeWebCacheParser will be disabled.
+java.lang.UnsatisfiedLinkError: Unable to load library 'esedb':
+dlopen(libesedb.dylib, 0x0009): tried: 'libesedb.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibesedb.dylib' (no such file), '/private/tmp/iped-contribution-tools/jdk-11.0.28-full.jdk/bin/../lib/jli/libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache), 'libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache)
+dlopen(libesedb.dylib, 0x0009): tried: 'libesedb.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibesedb.dylib' (no such file), '/private/tmp/iped-contribution-tools/jdk-11.0.28-full.jdk/bin/../lib/jli/libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache), 'libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache)
+dlopen(/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+dlopen(/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/esedb.framework/esedb' (no such file), '/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+dlopen(/System/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/System/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+Native library (darwin/libesedb.dylib) not found in resource path (/private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/test-classes:/private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/classes:/private/tmp/iped-contribution-tools/m2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-core/2.4.0-p1/tika-core-2.4.0-p1.jar:/private/tmp/iped-contribution-tools/m2/org/mockito/mockito-core/3.8.0/mockito-core-3.8.0.jar:/private/tmp/iped-contribution-tools/m2/net/bytebuddy/byte-buddy/1.10.20/byte-buddy-1.10.20.jar:/private/tmp/iped-contribution-tools/m2/net/bytebuddy/byte-buddy-agent/1.10.20/byte-buddy-agent-1.10.20.jar:/private/tmp/iped-contribution-tools/m2/org/objenesis/objenesis/3.1/objenesis-3.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parsers-standard-package/2.4.0-p1/tika-parsers-standard-package-2.4.0-p1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-apple-module/2.4.0/tika-parser-apple-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-zip-commons/2.4.0/tika-parser-zip-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-audiovideo-module/2.4.0/tika-parser-audiovideo-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-cad-module/2.4.0/tika-parser-cad-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-code-module/2.4.0/tika-parser-code-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/codelibs/jhighlight/1.1.0/jhighlight-1.1.0.jar:/private/tmp/iped-contribution-tools/m2/commons-io/commons-io/2.7/commons-io-2.7.jar:/private/tmp/iped-contribution-tools/m2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/private/tmp/iped-contribution-tools/m2/org/ow2/asm/asm/9.3/asm-9.3.jar:/private/tmp/iped-contribution-tools/m2/com/epam/parso/2.0.14/parso-2.0.14.jar:/private/tmp/iped-contribution-tools/m2/org/tallison/jmatio/1.5/jmatio-1.5.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-crypto-module/2.4.0/tika-parser-crypto-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcmail-jdk15on/1.70/bcmail-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-digest-commons/2.4.0/tika-parser-digest-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-font-module/2.4.0/tika-parser-font-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-html-module/2.4.0/tika-parser-html-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-html-commons/2.4.0/tika-parser-html-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-mail-module/2.4.0/tika-parser-mail-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-mail-commons/2.4.0/tika-parser-mail-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/james/apache-mime4j-core/0.8.4/apache-mime4j-core-0.8.4.jar:/private/tmp/iped-contribution-tools/m2/org/apache/james/apache-mime4j-dom/0.8.4/apache-mime4j-dom-0.8.4.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-microsoft-module/2.4.0/tika-parser-microsoft-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi/5.2.2/poi-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/private/tmp/iped-contribution-tools/m2/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-scratchpad/5.2.2/poi-scratchpad-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-ooxml/5.2.2/poi-ooxml-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-ooxml-lite/5.2.2/poi-ooxml-lite-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/xmlbeans/xmlbeans/5.0.3/xmlbeans-5.0.3.jar:/private/tmp/iped-contribution-tools/m2/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/private/tmp/iped-contribution-tools/m2/com/healthmarketscience/jackcess/jackcess/4.0.1/jackcess-4.0.1.jar:/private/tmp/iped-contribution-tools/m2/com/healthmarketscience/jackcess/jackcess-encrypt/4.0.1/jackcess-encrypt-4.0.1.jar:/private/tmp/iped-contribution-tools/m2/org/slf4j/jcl-over-slf4j/1.7.36/jcl-over-slf4j-1.7.36.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-miscoffice-module/2.4.0/tika-parser-miscoffice-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/private/tmp/iped-contribution-tools/m2/org/glassfish/jaxb/jaxb-runtime/2.3.6/jaxb-runtime-2.3.6.jar:/private/tmp/iped-contribution-tools/m2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/private/tmp/iped-contribution-tools/m2/org/glassfish/jaxb/txw2/2.3.6/txw2-2.3.6.jar:/private/tmp/iped-contribution-tools/m2/com/sun/istack/istack-commons-runtime/3.0.12/istack-commons-runtime-3.0.12.jar:/private/tmp/iped-contribution-tools/m2/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-news-module/2.4.0/tika-parser-news-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/com/rometools/rome/1.18.0/rome-1.18.0.jar:/private/tmp/iped-contribution-tools/m2/com/rometools/rome-utils/1.18.0/rome-utils-1.18.0.jar:/private/tmp/iped-contribution-tools/m2/org/jdom/jdom2/2.0.6.1/jdom2-2.0.6.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-ocr-module/2.4.0/tika-parser-ocr-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-pdf-module/2.4.0/tika-parser-pdf-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox-tools/2.0.26/pdfbox-tools-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox-debugger/2.0.26/pdfbox-debugger-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/jempbox/1.8.16/jempbox-1.8.16.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-pkg-module/2.4.0/tika-parser-pkg-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/tukaani/xz/1.9/xz-1.9.jar:/private/tmp/iped-contribution-tools/m2/org/brotli/dec/0.1.2/dec-0.1.2.jar:/private/tmp/iped-contribution-tools/m2/com/github/junrar/junrar/7.5.1/junrar-7.5.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-text-module/2.4.0/tika-parser-text-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-csv/1.9.0/commons-csv-1.9.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-webarchive-module/2.4.0/tika-parser-webarchive-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/netpreserve/jwarc/0.18.1/jwarc-0.18.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-xml-module/2.4.0/tika-parser-xml-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-xmp-commons/2.4.0/tika-parser-xmp-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/xmpbox/2.0.26/xmpbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/gagravarr/vorbis-java-tika/0.8/vorbis-java-tika-0.8.jar:/private/tmp/iped-contribution-tools/m2/org/gagravarr/vorbis-java-core/0.8/vorbis-java-core-0.8.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/plist/dd-plist/1.26/dd-plist-1.26.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/private/tmp/iped-contribution-tools/m2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/private/tmp/iped-contribution-tools/m2/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-sqlite3-module/2.4.0/tika-parser-sqlite3-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-jdbc-commons/2.4.0/tika-parser-jdbc-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/net/java/dev/jna/jna/5.7.0/jna-5.7.0.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-core/2.18.6/jackson-core-2.18.6.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/private/tmp/iped-contribution-tools/m2/com/github/openjson/openjson/1.0.12/openjson-1.0.12.jar:/private/tmp/iped-contribution-tools/m2/org/tallison/isoparser/1.9.41.6/isoparser-1.9.41.6.jar:/private/tmp/iped-contribution-tools/m2/org/xerial/sqlite-jdbc/3.51.3.0/sqlite-jdbc-3.51.3.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/pcorless/icepdf/icepdf-core/7.0.0/icepdf-core-7.0.0.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcprov-jdk15on/1.70/bcprov-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcpkix-jdk15on/1.70/bcpkix-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcutil-jdk15on/1.70/bcutil-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-tiff/3.8.2/imageio-tiff-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-core/3.8.2/imageio-core-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-metadata/3.8.2/imageio-metadata-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-lang/3.8.2/common-lang-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-io/3.8.2/common-io-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-image/3.8.2/common-image-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/jbig2-imageio/3.0.4/jbig2-imageio-3.0.4.jar:/private/tmp/iped-contribution-tools/m2/com/drewnoakes/metadata-extractor/2.20.0/metadata-extractor-2.20.0.jar:/private/tmp/iped-contribution-tools/m2/com/adobe/xmp/xmpcore/6.1.11/xmpcore-6.1.11.jar:/private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/target/java-dbf-1.0-patched.jar:/private/tmp/iped-contribution-tools/m2/com/pff/java-libpst/0.9.5-20210209-p1/java-libpst-0.9.5-20210209-p1.jar:/private/tmp/iped-regex-cache-pr/iped-utils/target/iped-utils-4.4.0-SNAPSHOT.jar:/private/tmp/iped-contribution-tools/m2/net/jpountz/lz4/lz4/1.3/lz4-1.3.jar:/private/tmp/iped-contribution-tools/m2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/private/tmp/iped-regex-cache-pr/iped-api/target/iped-api-4.4.0-SNAPSHOT.jar:/private/tmp/iped-contribution-tools/m2/org/apache/lucene/lucene-core/9.2.0/lucene-core-9.2.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/ben-manes/caffeine/caffeine/3.2.2/caffeine-3.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/private/tmp/iped-contribution-tools/m2/net/sf/sevenzipjbinding/sevenzipjbinding/16.02-2.01/sevenzipjbinding-16.02-2.01.jar:/private/tmp/iped-contribution-tools/m2/net/sf/sevenzipjbinding/sevenzipjbinding-all-platforms/16.02-2.01/sevenzipjbinding-all-platforms-16.02-2.01.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/ez-vcard/ez-vcard/0.10.6/ez-vcard-0.10.6.jar:/private/tmp/iped-contribution-tools/m2/com/github/mangstadt/vinnie/2.0.2/vinnie-2.0.2.jar:/private/tmp/iped-contribution-tools/m2/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar:/private/tmp/iped-contribution-tools/m2/com/dampcake/bencode/1.4.1/bencode-1.4.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/sepinf-inc/telegram-decoder/telegram-decoder-api/1.0.15/telegram-decoder-api-1.0.15.jar:/private/tmp/iped-contribution-tools/m2/org/json/json/20250517/json-20250517.jar:/private/tmp/iped-contribution-tools/m2/com/github/sepinf-inc/telegram-decoder/telegram-decoder-impl/1.0.15/telegram-decoder-impl-1.0.15.jar:/private/tmp/iped-contribution-tools/m2/black/ninia/jep/4.0.3/jep-4.0.3.jar:/private/tmp/iped-contribution-tools/m2/net/sf/java-dbx/1.1-p6/java-dbx-1.1-p6.jar:/private/tmp/iped-contribution-tools/m2/github/sepinf/png-reader/jdk11+28-p1/png-reader-jdk11+28-p1.jar:/private/tmp/iped-contribution-tools/m2/io/github/fmpfeifer/libfqlite/1.57.05/libfqlite-1.57.05.jar:/private/tmp/iped-contribution-tools/m2/org/antlr/antlr4-runtime/4.9.2/antlr4-runtime-4.9.2.jar:/private/tmp/iped-contribution-tools/m2/org/springframework/spring-expression/5.3.39/spring-expression-5.3.39.jar:/private/tmp/iped-contribution-tools/m2/org/springframework/spring-core/5.3.39/spring-core-5.3.39.jar:/private/tmp/iped-contribution-tools/m2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/private/tmp/iped-contribution-tools/m2/com/github/horrorho/RagingMoose/c92dba11561cb1423dd81e3bb9dea8ae92a392d3/RagingMoose-c92dba11561cb1423dd81e3bb9dea8ae92a392d3.jar:/private/tmp/iped-contribution-tools/m2/net/dongliu/apk-parser/2.6.10/apk-parser-2.6.10.jar:/private/tmp/iped-contribution-tools/m2/com/webcohesion/ofx4j/ofx4j/1.36/ofx4j-1.36.jar:/private/tmp/iped-contribution-tools/m2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/private/tmp/iped-contribution-tools/m2/be/cyberelf/nanoxml/nanoxml/2.2.3/nanoxml-2.2.3.jar:/private/tmp/iped-contribution-tools/m2/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:/private/tmp/iped-contribution-tools/m2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar:/private/tmp/iped-contribution-tools/m2/com/j2html/j2html/1.6.0/j2html-1.6.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar:/private/tmp/iped-contribution-tools/m2/commons-validator/commons-validator/1.10.0/commons-validator-1.10.0.jar:/private/tmp/iped-contribution-tools/m2/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/private/tmp/iped-contribution-tools/m2/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/private/tmp/iped-contribution-tools/m2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-web/2.17.1/log4j-web-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-slf4j-impl/2.17.1/log4j-slf4j-impl-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/private/tmp/iped-contribution-tools/m2/junit/junit/4.13.2/junit-4.13.2.jar:/private/tmp/iped-contribution-tools/m2/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:)
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:301)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:461)
+	at com.sun.jna.Library$Handler.<init>(Library.java:192)
+	at com.sun.jna.Native.load(Native.java:596)
+	at com.sun.jna.Native.load(Native.java:570)
+	at iped.parsers.browsers.edge.EdgeWebCacheParser.<clinit>(EdgeWebCacheParser.java:99)
+	at iped.parsers.browsers.edge.EdgeWebCacheParserTest.testEdgeBookmarkParser(EdgeWebCacheParserTest.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:316)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:240)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:214)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:155)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+	Suppressed: java.lang.UnsatisfiedLinkError: dlopen(libesedb.dylib, 0x0009): tried: 'libesedb.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibesedb.dylib' (no such file), '/private/tmp/iped-contribution-tools/jdk-11.0.28-full.jdk/bin/../lib/jli/libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache), 'libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache)
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:191)
+		... 34 more
+	Suppressed: java.lang.UnsatisfiedLinkError: dlopen(libesedb.dylib, 0x0009): tried: 'libesedb.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OSlibesedb.dylib' (no such file), '/private/tmp/iped-contribution-tools/jdk-11.0.28-full.jdk/bin/../lib/jli/libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache), 'libesedb.dylib' (no such file), '/usr/lib/libesedb.dylib' (no such file, not in dyld cache)
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:204)
+		... 34 more
+	Suppressed: java.lang.UnsatisfiedLinkError: dlopen(/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/Users/thiagogenez/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:248)
+		... 34 more
+	Suppressed: java.lang.UnsatisfiedLinkError: dlopen(/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/Library/Frameworks/esedb.framework/esedb' (no such file), '/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:248)
+		... 34 more
+	Suppressed: java.lang.UnsatisfiedLinkError: dlopen(/System/Library/Frameworks/esedb.framework/esedb, 0x0009): tried: '/System/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/System/Library/Frameworks/esedb.framework/esedb' (no such file), '/System/Library/Frameworks/esedb.framework/esedb' (no such file, not in dyld cache)
+		at com.sun.jna.Native.open(Native Method)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:248)
+		... 34 more
+	Suppressed: java.io.IOException: Native library (darwin/libesedb.dylib) not found in resource path (/private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/test-classes:/private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/classes:/private/tmp/iped-contribution-tools/m2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-core/2.4.0-p1/tika-core-2.4.0-p1.jar:/private/tmp/iped-contribution-tools/m2/org/mockito/mockito-core/3.8.0/mockito-core-3.8.0.jar:/private/tmp/iped-contribution-tools/m2/net/bytebuddy/byte-buddy/1.10.20/byte-buddy-1.10.20.jar:/private/tmp/iped-contribution-tools/m2/net/bytebuddy/byte-buddy-agent/1.10.20/byte-buddy-agent-1.10.20.jar:/private/tmp/iped-contribution-tools/m2/org/objenesis/objenesis/3.1/objenesis-3.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parsers-standard-package/2.4.0-p1/tika-parsers-standard-package-2.4.0-p1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-apple-module/2.4.0/tika-parser-apple-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-zip-commons/2.4.0/tika-parser-zip-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-audiovideo-module/2.4.0/tika-parser-audiovideo-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-cad-module/2.4.0/tika-parser-cad-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-code-module/2.4.0/tika-parser-code-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/codelibs/jhighlight/1.1.0/jhighlight-1.1.0.jar:/private/tmp/iped-contribution-tools/m2/commons-io/commons-io/2.7/commons-io-2.7.jar:/private/tmp/iped-contribution-tools/m2/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/private/tmp/iped-contribution-tools/m2/org/ow2/asm/asm/9.3/asm-9.3.jar:/private/tmp/iped-contribution-tools/m2/com/epam/parso/2.0.14/parso-2.0.14.jar:/private/tmp/iped-contribution-tools/m2/org/tallison/jmatio/1.5/jmatio-1.5.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-crypto-module/2.4.0/tika-parser-crypto-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcmail-jdk15on/1.70/bcmail-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-digest-commons/2.4.0/tika-parser-digest-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-font-module/2.4.0/tika-parser-font-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-html-module/2.4.0/tika-parser-html-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-html-commons/2.4.0/tika-parser-html-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/de/l3s/boilerpipe/boilerpipe/1.1.0/boilerpipe-1.1.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-mail-module/2.4.0/tika-parser-mail-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-mail-commons/2.4.0/tika-parser-mail-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/james/apache-mime4j-core/0.8.4/apache-mime4j-core-0.8.4.jar:/private/tmp/iped-contribution-tools/m2/org/apache/james/apache-mime4j-dom/0.8.4/apache-mime4j-dom-0.8.4.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-microsoft-module/2.4.0/tika-parser-microsoft-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi/5.2.2/poi-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/private/tmp/iped-contribution-tools/m2/com/zaxxer/SparseBitSet/1.2/SparseBitSet-1.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-scratchpad/5.2.2/poi-scratchpad-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-ooxml/5.2.2/poi-ooxml-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/poi/poi-ooxml-lite/5.2.2/poi-ooxml-lite-5.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/xmlbeans/xmlbeans/5.0.3/xmlbeans-5.0.3.jar:/private/tmp/iped-contribution-tools/m2/com/github/virtuald/curvesapi/1.07/curvesapi-1.07.jar:/private/tmp/iped-contribution-tools/m2/com/healthmarketscience/jackcess/jackcess/4.0.1/jackcess-4.0.1.jar:/private/tmp/iped-contribution-tools/m2/com/healthmarketscience/jackcess/jackcess-encrypt/4.0.1/jackcess-encrypt-4.0.1.jar:/private/tmp/iped-contribution-tools/m2/org/slf4j/jcl-over-slf4j/1.7.36/jcl-over-slf4j-1.7.36.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-miscoffice-module/2.4.0/tika-parser-miscoffice-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/private/tmp/iped-contribution-tools/m2/org/glassfish/jaxb/jaxb-runtime/2.3.6/jaxb-runtime-2.3.6.jar:/private/tmp/iped-contribution-tools/m2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/private/tmp/iped-contribution-tools/m2/org/glassfish/jaxb/txw2/2.3.6/txw2-2.3.6.jar:/private/tmp/iped-contribution-tools/m2/com/sun/istack/istack-commons-runtime/3.0.12/istack-commons-runtime-3.0.12.jar:/private/tmp/iped-contribution-tools/m2/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-news-module/2.4.0/tika-parser-news-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/com/rometools/rome/1.18.0/rome-1.18.0.jar:/private/tmp/iped-contribution-tools/m2/com/rometools/rome-utils/1.18.0/rome-utils-1.18.0.jar:/private/tmp/iped-contribution-tools/m2/org/jdom/jdom2/2.0.6.1/jdom2-2.0.6.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-ocr-module/2.4.0/tika-parser-ocr-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-pdf-module/2.4.0/tika-parser-pdf-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox/2.0.26/pdfbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox-tools/2.0.26/pdfbox-tools-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/pdfbox-debugger/2.0.26/pdfbox-debugger-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/jempbox/1.8.16/jempbox-1.8.16.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-pkg-module/2.4.0/tika-parser-pkg-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/tukaani/xz/1.9/xz-1.9.jar:/private/tmp/iped-contribution-tools/m2/org/brotli/dec/0.1.2/dec-0.1.2.jar:/private/tmp/iped-contribution-tools/m2/com/github/junrar/junrar/7.5.1/junrar-7.5.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-text-module/2.4.0/tika-parser-text-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-csv/1.9.0/commons-csv-1.9.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-webarchive-module/2.4.0/tika-parser-webarchive-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/netpreserve/jwarc/0.18.1/jwarc-0.18.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-xml-module/2.4.0/tika-parser-xml-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-xmp-commons/2.4.0/tika-parser-xmp-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/xmpbox/2.0.26/xmpbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/gagravarr/vorbis-java-tika/0.8/vorbis-java-tika-0.8.jar:/private/tmp/iped-contribution-tools/m2/org/gagravarr/vorbis-java-core/0.8/vorbis-java-core-0.8.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/plist/dd-plist/1.26/dd-plist-1.26.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/private/tmp/iped-contribution-tools/m2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/private/tmp/iped-contribution-tools/m2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/private/tmp/iped-contribution-tools/m2/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-sqlite3-module/2.4.0/tika-parser-sqlite3-module-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/tika/tika-parser-jdbc-commons/2.4.0/tika-parser-jdbc-commons-2.4.0.jar:/private/tmp/iped-contribution-tools/m2/net/java/dev/jna/jna/5.7.0/jna-5.7.0.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-core/2.18.6/jackson-core-2.18.6.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar:/private/tmp/iped-contribution-tools/m2/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/private/tmp/iped-contribution-tools/m2/com/github/openjson/openjson/1.0.12/openjson-1.0.12.jar:/private/tmp/iped-contribution-tools/m2/org/tallison/isoparser/1.9.41.6/isoparser-1.9.41.6.jar:/private/tmp/iped-contribution-tools/m2/org/xerial/sqlite-jdbc/3.51.3.0/sqlite-jdbc-3.51.3.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/pcorless/icepdf/icepdf-core/7.0.0/icepdf-core-7.0.0.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcprov-jdk15on/1.70/bcprov-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcpkix-jdk15on/1.70/bcpkix-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/org/bouncycastle/bcutil-jdk15on/1.70/bcutil-jdk15on-1.70.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-tiff/3.8.2/imageio-tiff-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-core/3.8.2/imageio-core-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/imageio/imageio-metadata/3.8.2/imageio-metadata-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-lang/3.8.2/common-lang-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-io/3.8.2/common-io-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/com/twelvemonkeys/common/common-image/3.8.2/common-image-3.8.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/fontbox/2.0.26/fontbox-2.0.26.jar:/private/tmp/iped-contribution-tools/m2/org/apache/pdfbox/jbig2-imageio/3.0.4/jbig2-imageio-3.0.4.jar:/private/tmp/iped-contribution-tools/m2/com/drewnoakes/metadata-extractor/2.20.0/metadata-extractor-2.20.0.jar:/private/tmp/iped-contribution-tools/m2/com/adobe/xmp/xmpcore/6.1.11/xmpcore-6.1.11.jar:/private/tmp/iped-regex-cache-pr/iped-parsers/java-dbf/target/java-dbf-1.0-patched.jar:/private/tmp/iped-contribution-tools/m2/com/pff/java-libpst/0.9.5-20210209-p1/java-libpst-0.9.5-20210209-p1.jar:/private/tmp/iped-regex-cache-pr/iped-utils/target/iped-utils-4.4.0-SNAPSHOT.jar:/private/tmp/iped-contribution-tools/m2/net/jpountz/lz4/lz4/1.3/lz4-1.3.jar:/private/tmp/iped-contribution-tools/m2/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/private/tmp/iped-regex-cache-pr/iped-api/target/iped-api-4.4.0-SNAPSHOT.jar:/private/tmp/iped-contribution-tools/m2/org/apache/lucene/lucene-core/9.2.0/lucene-core-9.2.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/ben-manes/caffeine/caffeine/3.2.2/caffeine-3.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar:/private/tmp/iped-contribution-tools/m2/net/sf/sevenzipjbinding/sevenzipjbinding/16.02-2.01/sevenzipjbinding-16.02-2.01.jar:/private/tmp/iped-contribution-tools/m2/net/sf/sevenzipjbinding/sevenzipjbinding-all-platforms/16.02-2.01/sevenzipjbinding-all-platforms-16.02-2.01.jar:/private/tmp/iped-contribution-tools/m2/com/googlecode/ez-vcard/ez-vcard/0.10.6/ez-vcard-0.10.6.jar:/private/tmp/iped-contribution-tools/m2/com/github/mangstadt/vinnie/2.0.2/vinnie-2.0.2.jar:/private/tmp/iped-contribution-tools/m2/org/freemarker/freemarker/2.3.30/freemarker-2.3.30.jar:/private/tmp/iped-contribution-tools/m2/com/dampcake/bencode/1.4.1/bencode-1.4.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/private/tmp/iped-contribution-tools/m2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/private/tmp/iped-contribution-tools/m2/com/github/sepinf-inc/telegram-decoder/telegram-decoder-api/1.0.15/telegram-decoder-api-1.0.15.jar:/private/tmp/iped-contribution-tools/m2/org/json/json/20250517/json-20250517.jar:/private/tmp/iped-contribution-tools/m2/com/github/sepinf-inc/telegram-decoder/telegram-decoder-impl/1.0.15/telegram-decoder-impl-1.0.15.jar:/private/tmp/iped-contribution-tools/m2/black/ninia/jep/4.0.3/jep-4.0.3.jar:/private/tmp/iped-contribution-tools/m2/net/sf/java-dbx/1.1-p6/java-dbx-1.1-p6.jar:/private/tmp/iped-contribution-tools/m2/github/sepinf/png-reader/jdk11+28-p1/png-reader-jdk11+28-p1.jar:/private/tmp/iped-contribution-tools/m2/io/github/fmpfeifer/libfqlite/1.57.05/libfqlite-1.57.05.jar:/private/tmp/iped-contribution-tools/m2/org/antlr/antlr4-runtime/4.9.2/antlr4-runtime-4.9.2.jar:/private/tmp/iped-contribution-tools/m2/org/springframework/spring-expression/5.3.39/spring-expression-5.3.39.jar:/private/tmp/iped-contribution-tools/m2/org/springframework/spring-core/5.3.39/spring-core-5.3.39.jar:/private/tmp/iped-contribution-tools/m2/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/private/tmp/iped-contribution-tools/m2/com/github/horrorho/RagingMoose/c92dba11561cb1423dd81e3bb9dea8ae92a392d3/RagingMoose-c92dba11561cb1423dd81e3bb9dea8ae92a392d3.jar:/private/tmp/iped-contribution-tools/m2/net/dongliu/apk-parser/2.6.10/apk-parser-2.6.10.jar:/private/tmp/iped-contribution-tools/m2/com/webcohesion/ofx4j/ofx4j/1.36/ofx4j-1.36.jar:/private/tmp/iped-contribution-tools/m2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/private/tmp/iped-contribution-tools/m2/be/cyberelf/nanoxml/nanoxml/2.2.3/nanoxml-2.2.3.jar:/private/tmp/iped-contribution-tools/m2/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:/private/tmp/iped-contribution-tools/m2/org/javassist/javassist/3.28.0-GA/javassist-3.28.0-GA.jar:/private/tmp/iped-contribution-tools/m2/com/j2html/j2html/1.6.0/j2html-1.6.0.jar:/private/tmp/iped-contribution-tools/m2/com/google/code/gson/gson/2.13.1/gson-2.13.1.jar:/private/tmp/iped-contribution-tools/m2/commons-validator/commons-validator/1.10.0/commons-validator-1.10.0.jar:/private/tmp/iped-contribution-tools/m2/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/private/tmp/iped-contribution-tools/m2/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/private/tmp/iped-contribution-tools/m2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-api/2.17.1/log4j-api-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-core/2.17.1/log4j-core-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-web/2.17.1/log4j-web-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/apache/logging/log4j/log4j-slf4j-impl/2.17.1/log4j-slf4j-impl-2.17.1.jar:/private/tmp/iped-contribution-tools/m2/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar:/private/tmp/iped-contribution-tools/m2/junit/junit/4.13.2/junit-4.13.2.jar:/private/tmp/iped-contribution-tools/m2/org/hamcrest/hamcrest/3.0/hamcrest-3.0.jar:)
+		at com.sun.jna.Native.extractFromResourcePath(Native.java:1096)
+		at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:275)
+		... 34 more
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.429 s -- in iped.parsers.browsers.edge.EdgeWebCacheParserTest
+[INFO] Running iped.parsers.browsers.safari.SafariPlistParserTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in iped.parsers.browsers.safari.SafariPlistParserTest
+[INFO] Running iped.parsers.browsers.chrome.ChromeSqliteParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in iped.parsers.browsers.chrome.ChromeSqliteParserTest
+[INFO] Running iped.parsers.browsers.ie.IndexDatParserTest
+22:47:26.330 [main] ERROR iped.parsers.browsers.ie.IndexDatParser - Error testing msiecfexport (libmsiecf): index.dat files will NOT be parsed
+[WARNING] Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.005 s -- in iped.parsers.browsers.ie.IndexDatParserTest
+[INFO] Running iped.parsers.tor.TorParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in iped.parsers.tor.TorParserTest
+[INFO] Running iped.parsers.telegram.TelegramParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.791 s -- in iped.parsers.telegram.TelegramParserTest
+[INFO] Running iped.parsers.vcard.VCardParserTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.308 s -- in iped.parsers.vcard.VCardParserTest
+[INFO] Running iped.parsers.registry.RegRipperParserTest
+22:47:29.082 [main] ERROR iped.parsers.registry.RegRipperParser - Error testing rip (RegRipper): registry reports will NOT be created. Command line: perl -I . rip.pl  Check if perl module 'Parse::Win32Registry' is installed.
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.041 s -- in iped.parsers.registry.RegRipperParserTest
+[INFO] Running iped.parsers.registry.RegistryParserTest
+Warning: Nashorn engine is planned to be removed from a future JDK release
+false[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.426 s -- in iped.parsers.registry.RegistryParserTest
+[INFO] Running iped.parsers.usnjrnl.UsnJrnlParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.277 s -- in iped.parsers.usnjrnl.UsnJrnlParserTest
+[INFO] Running iped.parsers.emule.KnownMetParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in iped.parsers.emule.KnownMetParserTest
+[INFO] Running iped.parsers.emule.PreferencesDatParserTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in iped.parsers.emule.PreferencesDatParserTest
+[INFO] Running iped.parsers.emule.PartMetParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in iped.parsers.emule.PartMetParserTest
+[INFO] Running iped.parsers.external.ExternalParserTest
+22:47:36.446 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing SuperFetchParser. Disable it in conf/ExternalParsers.xml or install 'agdbinfo'
+22:47:36.455 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing PrefetchParser. Disable it in conf/ExternalParsers.xml or install 'sccainfo'
+22:47:36.466 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing RecycleBinParser. Disable it in conf/ExternalParsers.xml or install 'rifiuti-vista'
+22:47:36.471 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing RecycleInfo2Parser. Disable it in conf/ExternalParsers.xml or install 'rifiuti2'
+22:47:36.477 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing EvtxLogParser. Disable it in conf/ExternalParsers.xml or install 'evtxexport'
+22:47:36.485 [main] ERROR iped.parsers.external.ExternalParsersConfigReader - Error testing EvtLogParser. Disable it in conf/ExternalParsers.xml or install 'evtexport'
+[WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 6, Time elapsed: 0.192 s -- in iped.parsers.external.ExternalParserTest
+[INFO] Running iped.parsers.skype.SkypeParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.343 s -- in iped.parsers.skype.SkypeParserTest
+[INFO] Running iped.parsers.lnk.LNKShortcutParserTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in iped.parsers.lnk.LNKShortcutParserTest
+[INFO] Running iped.parsers.whatsapp.WhatsAppParserTest
+22:47:36.901 [main] ERROR iped.parsers.whatsapp.WhatsAppParser - HashTask is disabled. WhatsAppParser needs it to link attachments to chats!
+22:47:36.901 [main] ERROR iped.parsers.whatsapp.WhatsAppParser - SHA-256 is disabled. WhatsAppParser needs it to link attachments to chats!
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.752 s -- in iped.parsers.whatsapp.WhatsAppParserTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   SevenZipParserTest.testSevenZipRAR5Embedded:100 » Runtime SevenZipJBinding wasn't initialized successfully last time.
+[ERROR]   SevenZipParserTest.testSevenZipRAR5Parsing:33 » Runtime net.sf.sevenzipjbinding.SevenZipNativeInitializationException: Error loading SevenZipJBinding native library into JVM: Can't find suited platform for os.arch=aarch64, os.name=Mac... Available list of platforms: Linux-amd64, Linux-i386, Mac-x86_64, Windows-amd64, Windows-x86 [You may also try different SevenZipJBinding initialization methods 'net.sf.sevenzipjbinding.SevenZip.init*()' in order to solve this problem] 
+[INFO] 
+[ERROR] Tests run: 196, Failures: 0, Errors: 2, Skipped: 15
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] iped-parent 4.4.0-SNAPSHOT ......................... SUCCESS [  0.003 s]
+[INFO] iped-api 4.4.0-SNAPSHOT ............................ SUCCESS [  9.900 s]
+[INFO] iped-utils 4.4.0-SNAPSHOT .......................... SUCCESS [  1.308 s]
+[INFO] iped-parsers 4.4.0-SNAPSHOT ........................ SUCCESS [  0.001 s]
+[INFO] java-dbf 1.0-patched ............................... SUCCESS [  0.237 s]
+[INFO] iped-parsers-impl 4.4.0-SNAPSHOT ................... FAILURE [ 47.537 s]
+[INFO] iped-viewers 4.4.0-SNAPSHOT ........................ SKIPPED
+[INFO] iped-viewers-api 4.4.0-SNAPSHOT .................... SKIPPED
+[INFO] iped-viewers-impl 4.4.0-SNAPSHOT ................... SKIPPED
+[INFO] iped-carvers 4.4.0-SNAPSHOT ........................ SKIPPED
+[INFO] iped-ahocorasick 1.1 ............................... SKIPPED
+[INFO] iped-carvers-api 4.4.0-SNAPSHOT .................... SKIPPED
+[INFO] iped-carvers-impl 4.4.0-SNAPSHOT ................... SKIPPED
+[INFO] iped-engine 4.4.0-SNAPSHOT ......................... SKIPPED
+[INFO] iped-geo 4.4.0-SNAPSHOT ............................ SKIPPED
+[INFO] iped-app 4.4.0-SNAPSHOT ............................ SKIPPED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  59.078 s
+[INFO] Finished at: 2026-09-12T22:47:38+02:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.2.5:test (default-test) on project iped-parsers-impl: 
+[ERROR] 
+[ERROR] Please refer to /private/tmp/iped-regex-cache-pr/iped-parsers/iped-parsers-impl/target/surefire-reports for the individual test results.
+[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <args> -rf :iped-parsers-impl

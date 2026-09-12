@@ -1,0 +1,22 @@
+[
+  {
+    "scenario": "fresh",
+    "exit": 0,
+    "index": "match.txt | Regex:REGRESSION2940 | RX2940-12345\nREGRESSION_HITS=1"
+  },
+  {
+    "scenario": "valid",
+    "exit": 0,
+    "index": "match.txt | Regex:REGRESSION2940 | RX2940-12345\nREGRESSION_HITS=1"
+  },
+  {
+    "scenario": "empty",
+    "exit": 0,
+    "index": "match.txt | Regex:REGRESSION2940 | RX2940-12345\nREGRESSION_HITS=1"
+  },
+  {
+    "scenario": "blocked",
+    "exit": 0,
+    "index": "match.txt | Regex:REGRESSION2940 | RX2940-12345\nREGRESSION_HITS=1"
+  }
+]

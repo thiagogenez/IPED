@@ -38,4 +38,14 @@ Before the correction, with only the cache-path and serialization delegation hoo
 
 Controls verify valid-cache reuse without reserialization, rebuilding after configuration changes, propagation of other fatal errors, and rejection of invalid regex configuration. The tests restore the static task/configuration state they temporarily replace.
 
-The full application suite, GUI, Windows behavior and the reporter's large regex configuration were not tested. This does not change regex syntax handling or address #2939.
+## Expanded validation
+
+- Full macOS ARM64 `mvn verify` reached 196 parser tests: 179 passed, 15 skipped and two SevenZip tests failed because the native library does not support this OS/architecture. Re-running the parser suite against unmodified master produced exactly the same failing test names, exception types and messages.
+- Continuing `verify` with only `SevenZipParserTest` excluded completed successfully: 194 parser tests (15 skipped) and 100 engine tests (none skipped), zero failures/errors, and all reactor modules built. The command added `'-Dtest=!SevenZipParserTest' -Dsurefire.failIfNoSpecifiedTests=false`; no repository build files were changed.
+- [Windows Server 2022 / Liberica JDK 11 validation](https://github.com/thiagogenez/IPED/actions/runs/34719146467): all ten cache regression tests passed, followed by a portable application build and four complete synthetic case-processing runs.
+- The Windows runs used two text files and `REGRESSION2940, false = RX2940-[0-9]{5}`, with a reduced profile enabling parsing, regex matching and text indexing. Fresh, valid, empty and non-replaceable cache scenarios each exited successfully. Direct Lucene index inspection found exactly one `Regex:REGRESSION2940 = RX2940-12345` occurrence, on `match.txt`, in every case.
+- Logs confirm valid-cache loading, empty-cache rebuilding, and processing continuing after the blocked save. The blocked path was a non-empty directory named `regexAutomata.cache`, avoiding permission tests that can behave differently for privileged users.
+
+CI scripts are preserved on the separate `validation/regex-cache-windows` branch; they are not part of this PR's diff. The tested production code is unchanged from this PR. The macOS processing attempt was blocked by native FFmpeg/Zstandard requirements; the complete synthetic processing proof was executed on Windows instead.
+
+The GUI, disk-image ingestion and the reporter's large regex configuration were not tested. Fifteen parser tests were skipped by the existing suite/environment. This does not change regex syntax handling or address #2939.
