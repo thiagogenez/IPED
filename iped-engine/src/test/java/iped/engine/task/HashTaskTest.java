@@ -3,6 +3,7 @@ package iped.engine.task;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -19,6 +20,8 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -154,6 +157,128 @@ public class HashTaskTest {
         assertNextItemHash(task, "md5");
     }
 
+    @Test
+    public void testErrorOnFirstSubmissionPropagates() throws Exception {
+        assertSubmissionFailure(false, true);
+    }
+
+    @Test
+    public void testErrorAfterAcceptedSubmissionWaitsAndPropagates() throws Exception {
+        assertSubmissionFailure(true, true);
+    }
+
+    @Test
+    public void testRejectedSubmissionWaitsAndResets() throws Exception {
+        assertSubmissionFailure(true, false);
+    }
+
+    private void assertSubmissionFailure(boolean acceptFirst, boolean fatal) throws Exception {
+        CountDownLatch started = new CountDownLatch(1);
+        CountDownLatch release = new CountDownLatch(1);
+        CountDownLatch submissionFailed = new CountDownLatch(1);
+        AtomicBoolean hashing = new AtomicBoolean();
+        AtomicBoolean resetWhileHashing = new AtomicBoolean();
+        OutOfMemoryError submissionError = new OutOfMemoryError("Injected submission failure");
+        // Daemon threads ensure a broken cleanup cannot hang the test JVM.
+        ExecutorService updates = Executors.newSingleThreadExecutor(r -> {
+            Thread thread = new Thread(r, "hash-test-update");
+            thread.setDaemon(true);
+            return thread;
+        });
+        ExecutorService caller = Executors.newSingleThreadExecutor(r -> {
+            Thread thread = new Thread(r, "hash-test-caller");
+            thread.setDaemon(true);
+            return thread;
+        });
+        HashTask task = new HashTask() {
+            private int submissions;
+            private boolean failed;
+
+            @Override
+            void submitDigestUpdate(Runnable update) {
+                if (!failed && submissions++ == (acceptFirst ? 1 : 0)) {
+                    if (acceptFirst) {
+                        try {
+                            await(started);
+                        } catch (IOException e) {
+                            throw new IllegalStateException(e);
+                        }
+                    }
+                    failed = true;
+                    submissionFailed.countDown();
+                    if (fatal) {
+                        throw submissionError;
+                    }
+                    throw new RejectedExecutionException("Injected rejection");
+                }
+                updates.execute(update);
+            }
+        };
+        MessageDigest md5 = new TrackingDigest(newDigest("md5")) {
+            @Override
+            protected void engineUpdate(byte[] bytes, int offset, int length) {
+                hashing.set(true);
+                started.countDown();
+                try {
+                    await(release);
+                    super.engineUpdate(bytes, offset, length);
+                } catch (IOException e) {
+                    throw new IllegalStateException(e);
+                } finally {
+                    hashing.set(false);
+                }
+            }
+
+            @Override
+            protected void engineReset() {
+                resetWhileHashing.set(resetWhileHashing.get() || hashing.get());
+                super.engineReset();
+            }
+        };
+        configureTask(task, "md5", md5);
+        // Three algorithms cover the failed submission AND submissions not yet attempted.
+        addDigest(task, "sha-256", newDigest("sha-256"));
+        addDigest(task, "sha-1", newDigest("sha-1"));
+        Item damaged = item(new ByteArrayInputStream(new byte[] { 'A' }), 1);
+        Future<?> processing = caller.submit(() -> task.process(damaged));
+        try {
+            assertTrue(submissionFailed.await(5, TimeUnit.SECONDS));
+            if (acceptFirst) {
+                try {
+                    processing.get(200, TimeUnit.MILLISECONDS);
+                    fail("Submission failure returned before an accepted update finished");
+                } catch (TimeoutException expected) {
+                    // Cleanup must wait for the accepted task, even for fatal errors.
+                }
+            }
+            release.countDown();
+            try {
+                processing.get(5, TimeUnit.SECONDS);
+                assertFalse("Fatal submission error was swallowed", fatal);
+            } catch (ExecutionException e) {
+                assertTrue("Normal rejection must follow the existing exception handling", fatal);
+                assertSame(submissionError, e.getCause());
+            }
+            assertFalse(resetWhileHashing.get());
+            assertNull(damaged.getHash());
+            for (String algorithm : new String[] { "md5", "sha-256", "sha-1" }) {
+                assertNull(damaged.getExtraAttribute(algorithm));
+            }
+            Item next = item(new ByteArrayInputStream(NEXT_ITEM), NEXT_ITEM.length);
+            task.process(next);
+            assertEquals(HashTask.getHashString(newDigest("md5").digest(NEXT_ITEM)), next.getHash());
+            for (String algorithm : new String[] { "md5", "sha-256", "sha-1" }) {
+                assertEquals(HashTask.getHashString(newDigest(algorithm).digest(NEXT_ITEM)),
+                        next.getExtraAttribute(algorithm));
+            }
+            assertNull(next.getExtraAttribute("ioError"));
+        } finally {
+            release.countDown();
+            caller.shutdownNow();
+            updates.shutdownNow();
+        }
+    }
+
     private void assertPendingDigestCleanup(boolean interrupt) throws Exception {
         CountDownLatch started = new CountDownLatch(1);
         CountDownLatch release = new CountDownLatch(1);
@@ -260,16 +385,24 @@ public class HashTaskTest {
         return item;
     }
 
-    @SuppressWarnings("unchecked")
     private HashTask newTask(String algorithm, MessageDigest digest) throws Exception {
         HashTask task = new HashTask();
-        Field field = HashTask.class.getDeclaredField("digestMap");
-        field.setAccessible(true);
-        ((Map<String, MessageDigest>) field.get(task)).put(algorithm, digest);
+        configureTask(task, algorithm, digest);
+        return task;
+    }
+
+    private void configureTask(HashTask task, String algorithm, MessageDigest digest) throws Exception {
+        addDigest(task, algorithm, digest);
         Constructor<Statistics> constructor = Statistics.class.getDeclaredConstructor(ICaseData.class, File.class);
         constructor.setAccessible(true);
         task.stats = constructor.newInstance(null, new File(temporaryFolder.newFolder(), "index"));
-        return task;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void addDigest(HashTask task, String algorithm, MessageDigest digest) throws Exception {
+        Field field = HashTask.class.getDeclaredField("digestMap");
+        field.setAccessible(true);
+        ((Map<String, MessageDigest>) field.get(task)).put(algorithm, digest);
     }
 
     private static MessageDigest newDigest(String algorithm) throws Exception {

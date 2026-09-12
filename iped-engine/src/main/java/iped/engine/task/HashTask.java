@@ -112,6 +112,10 @@ public class HashTask extends AbstractTask {
         }
     }
 
+    void submitDigestUpdate(Runnable update) {
+        executorService.execute(update);
+    }
+
     public void process(IItem evidence) {
 
         if (evidence.isQueueEnd()) {
@@ -156,9 +160,10 @@ public class HashTask extends AbstractTask {
 
                 final int currLen = len;
                 final byte[] currHashBuf = hashBuf;
-                for (String algo : digestMap.keySet()) {
-                    try {
-                        executorService.execute(() -> {
+                int submitted = 0;
+                try {
+                    for (String algo : digestMap.keySet()) {
+                        submitDigestUpdate(() -> {
                             try {
                                 if (!algo.equals(HASH.EDONKEY.toString())) {
                                     digestMap.get(algo).update(currHashBuf, 0, currLen);
@@ -171,10 +176,15 @@ public class HashTask extends AbstractTask {
                                 countDown.get().countDown();
                             }
                         });
-                    } catch (RuntimeException e) {
-                        // A rejected submission must not leave cleanup waiting for a task that never started.
+                        submitted++;
+                    }
+                } catch (RuntimeException e) {
+                    ex.set(e);
+                } finally {
+                    // On submission failure, these updates can never count down the latch.
+                    // Also account for algorithms not yet attempted if execute throws an Error.
+                    for (int i = submitted; i < digestMap.size(); i++) {
                         countDown.get().countDown();
-                        ex.set(e);
                     }
                 }
 
