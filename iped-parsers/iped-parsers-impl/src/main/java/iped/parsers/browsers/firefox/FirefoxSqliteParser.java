@@ -591,9 +591,11 @@ public class FirefoxSqliteParser extends AbstractSqliteBrowserParser {
             String sql = "SELECT moz_places.id, moz_places.url, path.content, attributes.content " //$NON-NLS-1$
                     + "FROM moz_places " //$NON-NLS-1$
                     + "INNER JOIN moz_annos AS path " //$NON-NLS-1$
-                    + "ON (moz_places.id = path.place_id AND path.anno_attribute_id = 3) " //$NON-NLS-1$
+                    + "ON (moz_places.id = path.place_id AND path.anno_attribute_id = " //$NON-NLS-1$
+                    + "(SELECT id FROM moz_anno_attributes WHERE name = 'downloads/destinationFileURI')) " //$NON-NLS-1$
                     + "INNER JOIN moz_annos AS attributes " //$NON-NLS-1$
-                    + "ON (moz_places.id = attributes.place_id AND attributes.anno_attribute_id = 4) "; //$NON-NLS-1$
+                    + "ON (moz_places.id = attributes.place_id AND attributes.anno_attribute_id = " //$NON-NLS-1$
+                    + "(SELECT id FROM moz_anno_attributes WHERE name = 'downloads/metaData')) "; //$NON-NLS-1$
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
