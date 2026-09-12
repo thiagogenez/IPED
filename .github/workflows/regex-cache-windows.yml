@@ -25,9 +25,17 @@ jobs:
       - name: Run production cache regression tests on Windows
         shell: pwsh
         run: mvn -B -ntp -s validation-settings.xml -pl iped-engine -am '-Dtest=RegexTaskCacheTest' '-Dsurefire.failIfNoSpecifiedTests=false' test
+      - name: Build portable application for smoke tests
+        shell: pwsh
+        run: mvn -B -ntp -s validation-settings.xml '-DskipTests' package
+      - name: Process synthetic evidence across cache states
+        shell: pwsh
+        run: python .github/scripts/regex-cache-smoke.py
       - name: Save test evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: regex-cache-windows-reports
-          path: '**/target/surefire-reports/*'
+          path: |
+            **/target/surefire-reports/*
+            smoke-results/*
