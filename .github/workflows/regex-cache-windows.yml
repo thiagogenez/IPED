@@ -1,0 +1,33 @@
+name: Regex cache Windows validation
+on:
+  push:
+    branches: [validation/regex-cache-windows]
+permissions:
+  contents: read
+jobs:
+  cache:
+    runs-on: windows-2022
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: liberica
+          java-version: '11.0.28'
+          java-package: jdk+fx
+          cache: maven
+      - name: Configure Maven mirrors
+        shell: pwsh
+        run: |
+          @'
+          <settings><mirrors><mirror><id>central-for-speech</id><mirrorOf>maven-cognitiveservices-speech,maven-vosk</mirrorOf><url>https://repo.maven.apache.org/maven2</url></mirror></mirrors></settings>
+          '@ | Set-Content -Encoding utf8 validation-settings.xml
+      - name: Run production cache regression tests on Windows
+        shell: pwsh
+        run: mvn -B -ntp -s validation-settings.xml -pl iped-engine -am '-Dtest=RegexTaskCacheTest' '-Dsurefire.failIfNoSpecifiedTests=false' test
+      - name: Save test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regex-cache-windows-reports
+          path: '**/target/surefire-reports/*'
