@@ -37,3 +37,11 @@ Este registro e as provas dos bugs adiados estão preservados na branch `investi
 - PR #1: adicionados dois controles negativos de anotações alheias nos IDs 3/4. Seis testes passam; os dois novos detectam uma consulta deliberadamente incorreta que aceita também os IDs numéricos. SQL de produção preservada.
 - PR #2: corrigida espera infinita caso execute lance Error antes de iniciar um update. Contagens de submissões falhas e ainda não tentadas são liberadas; tarefas aceitas terminam antes da limpeza e da propagação do Error. Os dois novos cenários fatais deram timeout antes do ajuste; todos os nove testes passam depois, incluindo rejeição normal e três algoritmos simultâneos.
 - Maven 3.9.9 / Liberica JDK 11.0.28 Full. Nenhum esgotamento real de recursos, alteração do pool global ou teste de GUI. Logs desta rodada estão em evidence/iped-*-revision-*.log.
+
+## Issue existente #2940 — cache de regex
+
+Correção preparada na branch `fix/regex-cache-failure`, commit `cea9fc1`, como [PR draft #3 no fork](https://github.com/thiagogenez/IPED/pull/3), relacionado à [issue upstream #2940](https://github.com/sepinf-inc/IPED/issues/2940). Publicação upstream segue pausada por orientação do usuário.
+
+Antes: dez testes, seis erros. Depois: dez testes sem falhas ou erros; incluindo validadores próximos, 71 testes passaram em Maven/JDK 11. Cache corrompido é reconstruído; gravação temporária e substituição atômica preservam o cache anterior; falhas do cache não impedem matching. SOE controlado no limite de serialização; outros erros fatais continuam propagando.
+
+Descrição: [regex-cache.md](prs/regex-cache.md). Logs: [antes](evidence/regex-cache-before.log), [depois](evidence/regex-cache-after.log), [validadores](evidence/regex-cache-validation.log). GUI, Windows e configuração grande do autor não executados.
