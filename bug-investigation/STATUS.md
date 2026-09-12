@@ -31,3 +31,9 @@ A [wiki do IPED](https://github.com/sepinf-inc/IPED/wiki/Contributing) orienta c
 Antes de enviar ao repositório oficial, registrar as duas issues com essas reproduções e relacionar os PRs. Considerar a sobreposição da correção de HashTask com o [PR oficial #2918](https://github.com/sepinf-inc/IPED/pull/2918). Nenhuma issue ou comentário foi publicado no repositório oficial durante esta etapa.
 
 Este registro e as provas dos bugs adiados estão preservados na branch `investigation/forensic-bug-backlog` do fork. Eles não fazem parte dos diffs dos dois PRs de correção.
+
+## Melhorias após revisão crítica
+
+- PR #1: adicionados dois controles negativos de anotações alheias nos IDs 3/4. Seis testes passam; os dois novos detectam uma consulta deliberadamente incorreta que aceita também os IDs numéricos. SQL de produção preservada.
+- PR #2: corrigida espera infinita caso execute lance Error antes de iniciar um update. Contagens de submissões falhas e ainda não tentadas são liberadas; tarefas aceitas terminam antes da limpeza e da propagação do Error. Os dois novos cenários fatais deram timeout antes do ajuste; todos os nove testes passam depois, incluindo rejeição normal e três algoritmos simultâneos.
+- Maven 3.9.9 / Liberica JDK 11.0.28 Full. Nenhum esgotamento real de recursos, alteração do pool global ou teste de GUI. Logs desta rodada estão em evidence/iped-*-revision-*.log.

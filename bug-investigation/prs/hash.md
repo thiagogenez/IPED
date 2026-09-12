@@ -25,7 +25,8 @@ The regression tests inject the I/O failure with a controlled stream and coordin
 - Clear each digest, ED2K chunk counters and accumulated chunk hashes after an unsuccessful operation.
 - Preserve the caller's interrupted status after cleanup and avoid publishing a partial hash when interrupted.
 - Check for a digest exception after the final chunk completes, before publishing hashes.
-- Account for rejected submissions so cleanup cannot wait indefinitely for a task that never started.
+- Account for the failed submission and all unattempted submissions in a finally block. Cleanup waits only for accepted updates, even when execute throws an Error, and the original Error propagates to the worker after cleanup. Normal rejected submissions retain the existing exception handling.
+- Add a package-private submission method so tests can inject failures with their own executors without replacing or shutting down the shared production pool.
 
 ## Regression coverage
 
@@ -34,6 +35,11 @@ The regression tests inject the I/O failure with a controlled stream and coordin
 - I/O failure while a digest update remains pending, verifying that cleanup waits and never resets a running digest.
 - Interruption while a digest update remains pending, verifying cleanup and preservation of the interrupt flag.
 - An asynchronous failure in the final digest update, verifying that no hash is published and the next item hashes correctly.
+
+- Controlled submission Error on the first algorithm and after an accepted update is still pending, with three configured algorithms. Verify waiting for accepted work, propagating the same Error, no published hashes, and correct subsequent MD5/SHA-256/SHA-1 results.
+- Normal rejection after an accepted update, with the same cleanup and reuse checks.
+
+The submission tests inject OutOfMemoryError without exhausting real resources. They use separate executors and leave the production pool untouched. These cases protect against cleanup blocking on work that never started; a real Error still follows the worker’s existing abort policy.
 
 The reuse tests compare subsequent successful items with independently computed hashes, including a second successful reuse.
 
@@ -45,7 +51,7 @@ mvn -B -pl iped-engine -am -Dtest=HashTaskTest -Dsurefire.failIfNoSpecifiedTests
 
 Test environment: Maven 3.9.9 and Liberica JDK 11.0.28 Full on macOS ARM64. The required reactor modules are built. Local Maven settings route the speech repository IDs to Maven Central; dependency versions and repository build files are unchanged. The full application test suite and GUI were not run.
 
-Before the production change: **6 tests run, 6 failures, 0 errors**. After the change: **6 tests run, 0 failures, 0 errors; BUILD SUCCESS**. The baseline was re-run with the final test file to verify all six regressions against the original HashTask.
+The original six tests were verified against the original HashTask: **6 tests run, 6 failures, 0 errors**. The two new Error tests were also run against the previous cleanup implementation, with only the submission delegation method added for injection: both timed out, while the other seven tests passed (**9 tests, 0 failures, 2 errors**). With the corrected submission accounting, the complete focused suite passes: **9 tests, 0 failures, 0 errors; BUILD SUCCESS**.
 
 ## Related work
 

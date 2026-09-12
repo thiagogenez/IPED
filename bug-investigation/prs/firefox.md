@@ -24,7 +24,7 @@ The new tests also renumber both sides of the annotation relationship in tempora
 ## Change
 
 - Resolve `downloads/destinationFileURI` and `downloads/metaData` through their unique names in the existing annotation table.
-- Add three tests through the complete parser entry point, asserting count, URL, destination, timestamp and byte size.
+- Add five tests through the complete parser entry point, asserting count, URL, destination, timestamp and byte size, and rejecting unrelated annotations at IDs 3/4.
 - Update two aggregate expectations in the existing bookmark test: its shared tracker also collects URLs and creation dates from download entries, so recovering three downloads adds three values to each collection. Bookmark-specific assertions are retained.
 
 Mozilla's [annotation implementation](https://searchfox.org/firefox-main/source/toolkit/components/places/History.sys.mjs) likewise resolves annotation IDs by name.
@@ -35,6 +35,8 @@ Mozilla's [annotation implementation](https://searchfox.org/firefox-main/source/
 mvn -B -pl iped-parsers/iped-parsers-impl -am -Dtest=FirefoxSqliteParserTest -Dsurefire.failIfNoSpecifiedTests=false test
 ```
 
-The tests were first run against the original parser: the existing-fixture and renumbered-ID regressions failed with `expected:<3> but was:<0>`, while the 3/4 control passed. With the fix, all four tests pass, including the existing bookmark test. Maven builds the required reactor modules; no parser mocks or SQLite substitutes are used.
+The tests were first run against the original parser: the existing-fixture and renumbered-ID regressions failed with `expected:<3> but was:<0>`, while the 3/4 control passed. With the fix, all six tests pass, including the existing bookmark test. Maven builds the required reactor modules; no parser mocks or SQLite substitutes are used.
+
+Two negative controls populate IDs 3/4 with unrelated annotation names and plausible destination/JSON values. With real downloads at 103/104, only the three real entries are extracted; with the real download annotations removed, zero entries are extracted. Both new tests fail against an isolated, deliberately incorrect query that also accepts numeric IDs 3/4. The production query was unchanged during this coverage extension. Validation used Maven 3.9.9 and Liberica JDK 11.0.28 Full.
 
 No new dependencies or fixture files are introduced. This PR is scoped to download annotation lookup.
