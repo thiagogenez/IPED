@@ -1,6 +1,6 @@
 When regex cache loading or saving fails, RegexTask currently aborts initialization even when it could rebuild the automata or use the ones already in memory. A failed save can also truncate a previously usable cache, causing later runs to fail while reading it.
 
-Addresses [sepinf-inc/IPED#2940](https://github.com/sepinf-inc/IPED/issues/2940).
+Fixes #2940.
 
 ## Reproduction and observed behavior
 

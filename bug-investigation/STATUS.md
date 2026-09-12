@@ -10,7 +10,7 @@ Os números de bugs abaixo são os do ranking da investigação; não são os n�
 | 4 — busca UTF-8 entre blocos | Adiado; reprodução e causa preservadas | [Prova](repros/HexUtf8Repro.java), [resultado](evidence/HexUtf8Repro.txt) |
 | 5 — minutos do offset de datas | Adiado; reprodução e causa preservadas | [Prova](repros/DateTimezoneRepro.java), [resultado](evidence/DateTimezoneRepro.txt) |
 
-Os PRs têm `thiagogenez/IPED:master` como destino. Ainda não foram enviados a `sepinf-inc/IPED`, portanto não representam aceite nem avaliação pela comunidade oficial.
+Os PRs #1 e #2 do fork têm `thiagogenez/IPED:master` como destino. Ainda não foram enviados a `sepinf-inc/IPED`, portanto não representam aceite nem avaliação pela comunidade oficial.
 
 ## Validação dos PRs
 
@@ -40,12 +40,18 @@ Este registro e as provas dos bugs adiados estão preservados na branch `investi
 
 ## Issue existente #2940 — cache de regex
 
-Correção preparada na branch `fix/regex-cache-failure`, commit `cea9fc1`, como [PR draft #3 no fork](https://github.com/thiagogenez/IPED/pull/3), relacionado à [issue upstream #2940](https://github.com/sepinf-inc/IPED/issues/2940). Publicação upstream segue pausada por orientação do usuário.
+Correção publicada para revisão no [PR upstream #2971](https://github.com/sepinf-inc/IPED/pull/2971), sem draft, relacionada à [issue #2940](https://github.com/sepinf-inc/IPED/issues/2940). Branch `fix/regex-cache-failure`, commit `cea9fc1`. O [PR #3 do fork](https://github.com/thiagogenez/IPED/pull/3) foi substituído pelo PR oficial; a branch de origem foi preservada. Publicação autorizada pelo usuário após a validação ampliada.
 
 Antes: dez testes, seis erros. Depois: dez testes sem falhas ou erros; incluindo validadores próximos, 71 testes passaram em Maven/JDK 11. Cache corrompido é reconstruído; gravação temporária e substituição atômica preservam o cache anterior; falhas do cache não impedem matching. SOE controlado no limite de serialização; outros erros fatais continuam propagando.
 
-Descrição: [regex-cache.md](prs/regex-cache.md). Logs: [antes](evidence/regex-cache-before.log), [depois](evidence/regex-cache-after.log), [validadores](evidence/regex-cache-validation.log). GUI, Windows e configuração grande do autor não executados.
+Descrição: [regex-cache.md](prs/regex-cache.md). Logs: [antes](evidence/regex-cache-before.log), [depois](evidence/regex-cache-after.log), [validadores](evidence/regex-cache-validation.log). Nesta rodada inicial, GUI, Windows e configuração grande do autor não foram executados; a validação Windows posterior está registrada abaixo.
 
 ### Validação ampliada da #2940
 
 Concluída: mesmos dois erros SevenZip no master/macOS; verify aprovado excluindo só essa classe (279 aprovados, 15 ignorados); dez testes Windows aprovados; quatro processamentos sintéticos Windows com resultado idêntico no índice. [Relatório e evidências](evidence/regex-cache-full-validation/README.md). [Execução Windows](https://github.com/thiagogenez/IPED/actions/runs/34719146467). Código do PR preservado, CI em branch separada.
+
+## Investigação separada — SevenZip no macOS ARM64
+
+O usuário decidiu tratar esta incompatibilidade separadamente da #2940. Os testes `SevenZipParserTest.testSevenZipRAR5Parsing` e `testSevenZipRAR5Embedded` falham também no master, com os mesmos erros de inicialização da biblioteca nativa. Evidências no [relatório de validação](evidence/regex-cache-full-validation/README.md).
+
+Próximo passo: verificar a política de suporte a macOS ARM64, issues/PRs existentes e disponibilidade de binários SevenZip compatíveis; reproduzir de forma isolada antes de propor atualização de dependência ou outra correção. Ainda não há solução validada nem issue/PR aberto para este trabalho. Ignorar os testes não corrige a incompatibilidade.
