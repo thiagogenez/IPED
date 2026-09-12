@@ -1,0 +1,14 @@
+PASS term=ABCD mode=UTF-8 text
+  expected offsets=[4094] lengths=[4]
+  actual   offsets=[4094] lengths=[4]
+FAIL term=éé mode=UTF-8 text
+  expected offsets=[100] lengths=[4]
+  actual   offsets=[100] lengths=[2]
+FAIL term=éé mode=UTF-8 text
+  expected offsets=[4094] lengths=[4]
+  actual   offsets=[] lengths=[]
+PASS term=C3A9C3A9 mode=hex
+  expected offsets=[4094] lengths=[4]
+  actual   offsets=[4094] lengths=[4]
+Exception in thread "main" java.lang.AssertionError: 2 search check(s) failed
+	at iped.app.ui.viewers.HexUtf8Repro.main(HexUtf8Repro.java:45)

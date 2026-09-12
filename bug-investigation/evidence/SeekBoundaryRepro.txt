@@ -1,0 +1,8 @@
+PASS sequential control: expected=ABCDE actual=ABCDE
+FAIL reread after seek(0): expected=ABCDE actual=
+FAIL remaining bytes after seek(4): expected=1 actual=5
+FAIL stay inside carved item: expected=E actual=ESECR
+FAIL EOF at item size: expected=-1 actual=83
+FAIL hex viewer reread after FIFO eviction: expected=4096 actual=0
+Exception in thread "main" java.lang.AssertionError: 5 failed checks
+	at SeekBoundaryRepro.main(SeekBoundaryRepro.java:58)

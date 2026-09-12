@@ -1,0 +1,26 @@
+PASS input=2024-01-15T12:00:00+05:30
+  expected=2024-01-15T06:30:00Z
+  actual=  2024-01-15T06:30:00Z
+  displacement_seconds=0
+PASS input=2024-01-15T12:00:00.123Z
+  expected=2024-01-15T12:00:00.123Z
+  actual=  2024-01-15T12:00:00.123Z
+  displacement_seconds=0
+PASS input=2024-01-15T12:00:00.123+05:00
+  expected=2024-01-15T07:00:00.123Z
+  actual=  2024-01-15T07:00:00.123Z
+  displacement_seconds=0
+FAIL input=2024-01-15T12:00:00.123+05:30
+  expected=2024-01-15T06:30:00.123Z
+  actual=  2024-01-15T07:00:00.123Z
+  displacement_seconds=1800
+FAIL input=2024-01-15T12:00:00.123+05:45
+  expected=2024-01-15T06:15:00.123Z
+  actual=  2024-01-15T07:00:00.123Z
+  displacement_seconds=2700
+FAIL input=2024-01-15T12:00:00.123-03:30
+  expected=2024-01-15T15:30:00.123Z
+  actual=  2024-01-15T15:00:00.123Z
+  displacement_seconds=-1800
+Exception in thread "main" java.lang.AssertionError: 3 timestamp(s) changed meaning
+	at DateTimezoneRepro.main(DateTimezoneRepro.java:27)

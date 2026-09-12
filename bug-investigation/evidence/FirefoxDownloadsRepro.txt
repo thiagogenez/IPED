@@ -1,0 +1,20 @@
+Production query extracted verbatim from FirefoxSqliteParser.getDownloads():
+SELECT moz_places.id, moz_places.url, path.content, attributes.content FROM moz_places INNER JOIN moz_annos AS path ON (moz_places.id = path.place_id AND path.anno_attribute_id = 3) INNER JOIN moz_annos AS attributes ON (moz_places.id = attributes.place_id AND attributes.anno_attribute_id = 4) 
+FAIL unaltered repository fixture
+  annotation IDs: [(1, 'downloads/destinationFileURI'), (2, 'downloads/metaData')]
+  expected download count: 3
+  actual download count:   0
+PASS control IDs 3 and 4
+  annotation IDs: [(3, 'downloads/destinationFileURI'), (4, 'downloads/metaData')]
+  expected download count: 3
+  actual download count:   3
+FAIL valid IDs 103 and 104
+  annotation IDs: [(103, 'downloads/destinationFileURI'), (104, 'downloads/metaData')]
+  expected download count: 3
+  actual download count:   0
+Downloads omitted from the unmodified fixture:
+  id=3149; file=processo-pf-master.zip; bytes=53274; endTime=1620839706660
+  id=3152; file=streeg-master.zip; bytes=858; endTime=1620839733695
+  id=3155; file=PTFRONTEND-master.zip; bytes=4675214; endTime=1620839758333
+Existing FirefoxSqliteParserTest asserts bookmark data; it contains no download assertions.
+2 product expectation(s) failed; one compatible-ID control passed.

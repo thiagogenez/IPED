@@ -1,0 +1,22 @@
+PASS control: intact evidence on fresh task
+  expected: C08E81E668BC621EF8882D8297C8D226
+  actual:   C08E81E668BC621EF8882D8297C8D226
+LOG [main, A with injected read error, java.io.IOException: Injected unreadable sector after readable prefix]
+PASS damaged item records I/O error
+  expected: true
+  actual:   true
+PASS damaged item has no published hash
+  expected: null
+  actual:   null
+FAIL intact next item must have its own MD5
+  expected: C08E81E668BC621EF8882D8297C8D226
+  actual:   B1D1DE0300A2F6FC2CDA6E6AB3439EA7
+MD5(prefix(A) || B): B1D1DE0300A2F6FC2CDA6E6AB3439EA7
+PASS next item is not marked as an I/O error
+  expected: null
+  actual:   null
+PASS control: state recovers after successful digest
+  expected: C08E81E668BC621EF8882D8297C8D226
+  actual:   C08E81E668BC621EF8882D8297C8D226
+Exception in thread "main" java.lang.AssertionError: 1 contract check(s) failed
+	at HashFailureRepro.main(HashFailureRepro.java:105)
