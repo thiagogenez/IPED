@@ -112,6 +112,10 @@ public class HashTask extends AbstractTask {
         }
     }
 
+    void submitDigestUpdate(Runnable update) {
+        executorService.execute(update);
+    }
+
     public void process(IItem evidence) {
 
         if (evidence.isQueueEnd()) {
@@ -128,6 +132,10 @@ public class HashTask extends AbstractTask {
             return;
         }
 
+        AtomicReference<CountDownLatch> countDown = new AtomicReference<>(null);
+        boolean completed = false;
+        boolean interrupted = false;
+
         try (InputStream in = evidence.getBufferedInputStream()) {
 
             byte[] readBuf = new byte[HASH_BUFFER_LEN];
@@ -135,7 +143,6 @@ public class HashTask extends AbstractTask {
             byte[] tempBuf = null;
             int len;
 
-            AtomicReference<CountDownLatch> countDown = new AtomicReference<>(null);
             AtomicReference<Exception> ex = new AtomicReference<Exception>(null);
 
             while ((len = in.read(readBuf)) >= 0 && !Thread.currentThread().isInterrupted()) {
@@ -153,20 +160,32 @@ public class HashTask extends AbstractTask {
 
                 final int currLen = len;
                 final byte[] currHashBuf = hashBuf;
-                for (String algo : digestMap.keySet()) {
-                    executorService.execute(() -> {
-                        try {
-                            if (!algo.equals(HASH.EDONKEY.toString())) {
-                                digestMap.get(algo).update(currHashBuf, 0, currLen);
-                            } else {
-                                updateEd2k(currHashBuf, currLen);
+                int submitted = 0;
+                try {
+                    for (String algo : digestMap.keySet()) {
+                        submitDigestUpdate(() -> {
+                            try {
+                                if (!algo.equals(HASH.EDONKEY.toString())) {
+                                    digestMap.get(algo).update(currHashBuf, 0, currLen);
+                                } else {
+                                    updateEd2k(currHashBuf, currLen);
+                                }
+                            } catch (Exception e) {
+                                ex.set(e);
+                            } finally {
+                                countDown.get().countDown();
                             }
-                        } catch (Exception e) {
-                            ex.set(e);
-                        } finally {
-                            countDown.get().countDown();
-                        }
-                    });
+                        });
+                        submitted++;
+                    }
+                } catch (RuntimeException e) {
+                    ex.set(e);
+                } finally {
+                    // On submission failure, these updates can never count down the latch.
+                    // Also account for algorithms not yet attempted if execute throws an Error.
+                    for (int i = submitted; i < digestMap.size(); i++) {
+                        countDown.get().countDown();
+                    }
                 }
 
                 if (ex.get() != null) {
@@ -176,6 +195,12 @@ public class HashTask extends AbstractTask {
 
             if (countDown.get() != null) {
                 countDown.get().await();
+            }
+            if (ex.get() != null) {
+                throw ex.get();
+            }
+            if (Thread.currentThread().isInterrupted()) {
+                throw new InterruptedException();
             }
 
             boolean defaultHash = true;
@@ -195,8 +220,10 @@ public class HashTask extends AbstractTask {
                 }
                 defaultHash = false;
             }
+            completed = true;
 
         } catch (Exception e) {
+            interrupted = e instanceof InterruptedException;
             if (e instanceof IOException) {
                 evidence.setExtraAttribute("ioError", "true"); //$NON-NLS-1$ //$NON-NLS-2$
                 stats.incIoErrors();
@@ -205,6 +232,29 @@ public class HashTask extends AbstractTask {
                     e.toString());
             // e.printStackTrace();
 
+        } finally {
+            if (!completed) {
+                // Reading overlaps digest updates. Let every submitted update finish before resetting state.
+                if (countDown.get() != null) {
+                    while (true) {
+                        try {
+                            countDown.get().await();
+                            break;
+                        } catch (InterruptedException e) {
+                            interrupted = true;
+                        }
+                    }
+                }
+                for (MessageDigest digest : digestMap.values()) {
+                    digest.reset();
+                }
+                chunk = 0;
+                total = 0;
+                out = new ByteArrayOutputStream();
+            }
+            if (interrupted) {
+                Thread.currentThread().interrupt();
+            }
         }
 
     }
