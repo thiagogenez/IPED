@@ -147,4 +147,4 @@ Ambiente executado: JDK 24.0.1 e SQLite do Python. As classes de produção Java
 
 Os cinco fontes locais coincidem com os blobs do master oficial consultado. A [checagem upstream](evidence/upstream-check.md) registra hashes, buscas de duplicatas e referências. Não encontrar uma issue nessas buscas não garante ineditismo.
 
-Nenhum arquivo de produção foi alterado. Esta pasta contém apenas provas e documentação; nenhuma issue, mensagem ou PR foi publicado.
+Esta pasta preserva a investigação inicial, com os fontes originais. As correções dos bugs 1 e 2 foram preparadas em branches separadas e publicadas em PRs no fork. Consulte [STATUS.md](STATUS.md) para links, validação e os bugs 3–5 adiados.
