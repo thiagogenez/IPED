@@ -48,7 +48,22 @@ public class FirefoxSqliteParserTest extends AbstractPkgTest {
         assertDownloadsWithAnnotationIds(103, 104);
     }
 
+    @Test
+    public void testFirefoxDownloadsIgnoreUnrelatedLegacyIds() throws Exception {
+        assertDownloadsWithAnnotationIds(103, 104, true, false);
+    }
+
+    @Test
+    public void testFirefoxUnrelatedAnnotationsAreNotDownloads() throws Exception {
+        assertDownloadsWithAnnotationIds(103, 104, true, true);
+    }
+
     private void assertDownloadsWithAnnotationIds(int destinationId, int metadataId) throws Exception {
+        assertDownloadsWithAnnotationIds(destinationId, metadataId, false, false);
+    }
+
+    private void assertDownloadsWithAnnotationIds(int destinationId, int metadataId,
+            boolean unrelatedLegacyIds, boolean removeDownloads) throws Exception {
         Path database = Files.createTempFile("firefox-downloads-", ".sqlite");
         try {
             try (InputStream stream = getStream("test-files/test_places.sqlite")) {
@@ -61,16 +76,36 @@ public class FirefoxSqliteParserTest extends AbstractPkgTest {
                         + destinationId + " WHEN 2 THEN " + metadataId + " ELSE id END");
                 statement.executeUpdate("UPDATE moz_annos SET anno_attribute_id = CASE anno_attribute_id WHEN 1 THEN "
                         + destinationId + " WHEN 2 THEN " + metadataId + " ELSE anno_attribute_id END");
+                if (unrelatedLegacyIds) {
+                    statement.executeUpdate("INSERT INTO moz_anno_attributes (id, name) VALUES "
+                            + "(3, 'test/unrelatedDestination'), (4, 'test/unrelatedMetadata')");
+                    // Plausible values must not turn unrelated annotations into downloads.
+                    statement.executeUpdate("INSERT INTO moz_annos (place_id, anno_attribute_id, content) "
+                            + "SELECT place_id, 3, 'file:///unrelated.zip' FROM moz_annos WHERE anno_attribute_id = "
+                            + destinationId);
+                    statement.executeUpdate("INSERT INTO moz_annos (place_id, anno_attribute_id, content) "
+                            + "SELECT place_id, 4, content FROM moz_annos WHERE anno_attribute_id = " + metadataId);
+                }
+                if (removeDownloads) {
+                    statement.executeUpdate("DELETE FROM moz_annos WHERE anno_attribute_id IN ("
+                            + destinationId + ", " + metadataId + ")");
+                    statement.executeUpdate("DELETE FROM moz_anno_attributes WHERE id IN ("
+                            + destinationId + ", " + metadataId + ")");
+                }
             }
             try (InputStream stream = Files.newInputStream(database)) {
-                assertDownloads(stream);
+                if (removeDownloads) {
+                    assertEquals(0, collectDownloads(stream).size());
+                } else {
+                    assertDownloads(stream);
+                }
             }
         } finally {
             Files.deleteIfExists(database);
         }
     }
 
-    private void assertDownloads(InputStream stream) throws Exception {
+    private List<Metadata> collectDownloads(InputStream stream) throws Exception {
         List<Metadata> downloads = new ArrayList<>();
         ParseContext context = new ParseContext();
         context.set(EmbeddedDocumentExtractor.class, new EmbeddedDocumentExtractor() {
@@ -89,7 +124,11 @@ public class FirefoxSqliteParserTest extends AbstractPkgTest {
             }
         });
         new FirefoxSqliteParser().parse(stream, new BodyContentHandler(), new Metadata(), context);
+        return downloads;
+    }
 
+    private void assertDownloads(InputStream stream) throws Exception {
+        List<Metadata> downloads = collectDownloads(stream);
         assertEquals(3, downloads.size());
         downloads.sort(Comparator.comparing(metadata -> metadata.get(ExtraProperties.DOWNLOAD_DATE)));
         String[] names = { "processo-pf", "streeg", "PTFRONTEND" };
